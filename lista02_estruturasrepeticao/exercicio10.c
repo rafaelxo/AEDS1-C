@@ -7,21 +7,15 @@ int main() {
     while (N > 0) {
         if (N == 1) {
             c1++;
-        }
-        if (N == 2) {
+        } else if (N == 2) {
             c2++;
-        }
-        if (N == 3) {
+        } else if (N == 3) {
             c3++;
-        }
-        if (N == 4) {
-
+        } else if (N == 4) {
             c4++;
-        }
-        if (N == 5) {
+        } else if (N == 5) {
             nulo++;
-        }
-        if (N == 6) {
+        } else if (N == 6) {
             branco++;
         }
         scanf("%d", &N);
