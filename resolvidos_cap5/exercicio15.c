@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main() {
-    int N, q_barato = 0, q_normal = 0, q_caro = 0, c_estocagem;
-    float p_unitario, imposto, p_final = 0, s_adicionais = 0, m_adicionais = 0, maior_p_final, menor_p_final, t_impostos = 0;
+    int N, q_barato = 0, q_normal = 0, q_caro = 0, c_estocagem, s_estocagem = 0;
+    float p_unitario, imposto, p_final, m_adicionais = 0, maior_p_final = 0, menor_p_final = 0, t_impostos = 0;
     char refrigeracao, categoria;
     printf("Insira quantos produtos quer calcular:\n");
     scanf("%d", &N);
@@ -40,7 +40,7 @@ int main() {
                 } else {
                     c_estocagem = 4;
                 }
-            } else if (refrigeracao == 'N') {
+            } else {
                 if (categoria == 'A' || categoria == 'V') {
                     c_estocagem = 0;
                 } else {
@@ -54,7 +54,7 @@ int main() {
             imposto = p_unitario * 0.02;
         }
         p_final = p_unitario + c_estocagem + imposto;
-        printf("\nO custo de estocagem, o imposto e o preco final equivalem, respectivamente a:\n%.2f\n%.2f\n%.2f\n", c_estocagem, imposto, p_final);
+        printf("\nO custo de estocagem, o imposto e o preco final equivalem, respectivamente a:\n%d\n%.2f\n%.2f\n", c_estocagem, imposto, p_final);
         if (p_final <= 20) {
             printf("\nProduto barato!\n");
             q_barato++;
@@ -65,21 +65,15 @@ int main() {
             printf("\nProduto caro!\n");
             q_caro++;
         }
-        s_adicionais += c_estocagem + imposto;
+        m_adicionais += c_estocagem + imposto;
         t_impostos += imposto;
-        if (cont1 == 1) {
+        if (p_final > maior_p_final) {
             maior_p_final = p_final;
-            menor_p_final = p_final;
-        } else {
-            if (p_final > maior_p_final) {
-                maior_p_final = p_final;
-            } else if (p_final < menor_p_final) {
-                menor_p_final = p_final;
-            }
+        } else if (p_final < menor_p_final) {
+             menor_p_final = p_final;
         }
     }
-    m_adicionais = s_adicionais/(N*1.0);
-    printf("\nA media dos valores adicionais e o total de impostos equivale, respectivamente, a:\n%.2f e %.2f\n", m_adicionais, t_impostos);
+    printf("\nA media dos valores adicionais e o total de impostos equivale, respectivamente, a:\n%.2f e %.2f\n", m_adicionais/(N*1.0), t_impostos);
     printf("\nO maior preco final e o menor sao, respectivamente:\n%.2f e %.2f\n", maior_p_final, menor_p_final);
-    printf("\nA quantidade de produtos , respectivamente, sao:\n%d baratos, %d normais e %d caros!", q_barato, q_normal, q_caro);
+    printf("\nA quantidade de produtos , respectivamente, sao:\n%d baratos, %d normais e %d caros!\n", q_barato, q_normal, q_caro);
 }

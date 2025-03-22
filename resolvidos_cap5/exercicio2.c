@@ -2,14 +2,13 @@
 #include <stdlib.h>
 
 int main() {
-    int cont1, N, cont2;
+    int N;
     float fat, E = 1;
     printf("Insira um numero para realizar o calculo:\n");
     scanf("%d", &N);
-    while (cont1 < N) {
+    for (int cont1 = 1; cont1 <= N; cont1++) {
         fat = 1;
-        cont1++;
-        for (cont2 = 1; cont2 <= cont1; cont2++) {
+        for (int cont2 = 1; cont2 <= cont1; cont2++) {
             fat *= cont2;
         }
         E += 1.0/fat;
