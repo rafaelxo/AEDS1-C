@@ -8,7 +8,7 @@ int main() {
     printf("Insira o codigo do professor:\n");
     scanf("%d", &cod);
     while (cod != 99999) {
-        printf("\nInsira a quantidade de aulas mensais e o genero do professor:\n");
+        printf("\nInsira a quantidade de aulas mensais e o sexo do professor (M ou F):\n");
         scanf("%d %c", &aulas_mensais, &sexo);
         s_bruto = aulas_mensais * 30;
         if (sexo == 'M') {
