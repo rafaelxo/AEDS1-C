@@ -2,10 +2,8 @@
 #include <stdlib.h>
 
 int main() {
-    int N, n1, n2, r;
+    int N, n1 = 1, n2 = 1, r;
     scanf("%d", &N);
-    n1 = 1;
-    n2 = 1;
     printf("%d %d ", n1, n2);
     for (int cont1 = 3; cont1 <= N; cont1++) {
         r = n1 + n2;

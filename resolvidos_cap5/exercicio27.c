@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 int main () {
-    int vendas = 120, depesa = 200, m_vendas = 0;
+    int vendas = 120, despesa = 200, m_vendas = 0;
     float p_ingresso = 5.0, lucro, m_preco = 0, m_lucro = 0;
     while (p_ingresso > 1) {
-        lucro = p_ingresso*vendas - depesa;
+        lucro = p_ingresso*vendas - despesa;
         if (lucro > m_lucro) {
             m_lucro = lucro;
             m_preco = p_ingresso;

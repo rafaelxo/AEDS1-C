@@ -6,8 +6,7 @@ int main() {
     float altura, peso, m_idades = 0, m_alturas = 0, porcentagem = 0, s_alturas = 0;
     printf("Insira quantos times estao inscritos no campeonato:\n");
     scanf("%d", &N);
-    while (cont1 <= N) {
-        cont1++;
+    for (cont1 = 1; cont1 <= N; cont1++) {
         for (cont2 = 1; cont2 <= 11; cont2++) {
             printf("\nInsira a idade, o peso e a altura do jogador:\n");
             scanf("%d%f%f", &idade, &peso, &altura);
