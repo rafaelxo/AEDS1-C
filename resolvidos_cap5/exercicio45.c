@@ -4,11 +4,11 @@
 int main() {
     int N, opcao, peso, s_peso = 0;
     float nota, media_a = 0, media_p = 0;
-    printf("Insira quantas notas deseja calcular:\n");
-    scanf("%d", &N);
+    printf("Menu de opcoes:\n\n1. Media aritmetica\n2. Media ponderada\n3. Sair\n\nInsira a opcao desejada:\n");
+    scanf("%d", &opcao);
     do {
-        printf("\nMenu de opcoes:\n\n1. Media aritmetica\n2. Media ponderada\n3. Sair\n\nInsira a opcao desejada:\n");
-        scanf("%d", &opcao);
+        printf("Insira quantas notas deseja calcular:\n");
+        scanf("%d", &N);
         if (opcao == 1) {
             media_a = 0;
             for (int cont1 = 1; cont1 <= N; cont1++) {
@@ -30,5 +30,7 @@ int main() {
         } else {
             printf("\nPrograma finalizado!\n");
         }
+        printf("\nMenu de opcoes:\n\n1. Media aritmetica\n2. Media ponderada\n3. Sair\n\nInsira a opcao desejada:\n");
+        scanf("%d", &opcao);
     } while (opcao < 3);
 }
