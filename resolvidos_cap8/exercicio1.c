@@ -12,8 +12,12 @@ void verificacao(int num) {
 }
 
 int main() {
-   int N;
-   printf("Insira um numero:\n");
-   scanf("%d", &N);
-   (verificacao(N));
+    int N, num;
+    printf("Insira quantas vezes quer verificar:\n");
+    scanf("%d", &N);
+    for (int cont1 = 1; cont1 <= N; cont1++) {
+        printf("\nInsira o valor para verificar:\n");
+        scanf("%d", &num);
+        (verificacao(num));
+    }
 }
