@@ -13,7 +13,7 @@ char categoria (int idade) {
     } else if (idade >= 16 && idade <= 17) {
         return 'B';
     } else if (idade > 18) {
-        return 'F';
+        return 'A';
     }
 }
 
