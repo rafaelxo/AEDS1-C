@@ -2,21 +2,21 @@
 #include <stdio.h>
 
 void ordemCrescente (int n1, int n2, int n3) {
-    int troca;
+    int menor;
     if (n1 > n2) {
-        troca = n1;
+        menor = n1;
         n1 = n2;
-        n2 = troca;
+        n2 = menor;
     }
     if (n1 > n3) {
-        troca = n1;
+        menor = n1;
         n1 = n3;
-        n3 = troca;
+        n3 = menor;
     }
     if (n2 > n3) {
-        troca = n2;
+        menor = n2;
         n2 = n3;
-        n3 = troca;
+        n3 = menor;
     }
     printf("%d %d %d\n", n1, n2, n3);
 }
