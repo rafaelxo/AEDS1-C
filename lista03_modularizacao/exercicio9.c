@@ -10,11 +10,10 @@ float media(N) {
             media += nota;
         }
     }
-    return (media/q_aprovados*1.0);
+    return (media/q_aprovados);
 }
 
-int main()
-{
+int main() {
     int N;
     scanf("%d", &N);
     printf("%.1f", media(N));

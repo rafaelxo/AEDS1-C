@@ -4,13 +4,13 @@
 char categoria (int idade) {
     if (idade >= 5 && idade <= 7) {
         return 'F';
-    } else if (idade >= 8 && idade <= 10) {
+    } else if (idade <= 10) {
         return 'E';
-    } else if (idade >= 11 && idade <= 13) {
+    } else if (idade <= 13) {
         return 'D';
-    } else if (idade >= 14 && idade <= 15) {
+    } else if (idade <= 15) {
         return 'C';
-    } else if (idade >= 16 && idade <= 17) {
+    } else if (idade <= 17) {
         return 'B';
     } else if (idade > 18) {
         return 'A';

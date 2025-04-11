@@ -2,9 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int N;
-    float p_pos = 0, p_neg = 0, p_zero = 0;
-    long int pos = 0, neg = 0, zero = 0;
+    int N, pos = 0, neg = 0, zero = 0;
     scanf("%d", &N);
     for (int cont1 = 1; cont1 <= N; cont1++) {
         long int num;
@@ -17,8 +15,5 @@ int main() {
         pos += 1;
         }
     }
-    p_pos = pos*100/N;
-    p_neg = neg*100/N;
-    p_zero = zero*100/N;
-    printf("%.0f%% POSITIVOS\n%0.f%% NEGATIVOS\n%0.f%% ZEROS", p_pos, p_neg, p_zero);
+    printf("%.0f%% POSITIVOS\n%0.f%% NEGATIVOS\n%0.f%% ZEROS", pos*100.0/N, neg*100.0/N, zero*100.0/N);
 }

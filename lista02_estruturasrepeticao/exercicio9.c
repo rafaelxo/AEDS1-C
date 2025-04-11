@@ -9,11 +9,11 @@ int main() {
         lucro = p_venda - p_compra;
         s_p_compra += p_compra;
         s_p_venda += p_venda;
-        if (((lucro/p_compra)*100) < 10) {
+        if ((lucro*100/p_compra) < 10) {
             l_menor++;
-        } else if (((lucro/p_compra)*100) <= 20) {
+        } else if ((lucro*100/p_compra) <= 20) {
             l_meio++;
-        } else if (((lucro/p_compra)*100) > 20) {
+        } else if ((lucro*100/p_compra) > 20) {
             l_maior++;
         }
         lucro_total += lucro;

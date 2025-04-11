@@ -11,10 +11,7 @@ int main () {
     scanf("%d", &N);
     for (int cont1 = 1; cont1 <= N; cont1++) {
         scanf("%d", &num);
-        if (verificacao(num)) {
-            printf("SIM\n");
-        } else {
-            printf("NAO\n");
-        }
+        if (verificacao(num)) printf("SIM\n");
+        else printf("NAO\n");
     }
 }

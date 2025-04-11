@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 int main() {
-    int N;
-    long int pos = 0, neg = 0, zero = 0;
+    int N, pos = 0, neg = 0, zero = 0;
     scanf("%d", &N);
     for (int cont1 = 1; cont1 <= N; cont1++) {
         long int num;
