@@ -2,7 +2,8 @@
 #include <stdlib.h>
 
 int resto (int numerador, int denominador) {
-    
+    if (numerador < denominador) return numerador;
+    else return resto (numerador - denominador, denominador);
 }
 
 int main () {

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int fatorial (int N) {
-    if (N == 1 || N == 0) return 1;
+    if (N == 1) return 1;
     else return N*fatorial(N-1);
 }
 
