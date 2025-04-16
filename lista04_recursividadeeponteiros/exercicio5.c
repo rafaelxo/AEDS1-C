@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int fatorial (int N) {
-    if (N == 1) return 1;
-    else return N*fatorial(N-1);
+int fatorial (int n) {
+    if (n == 1) return 1;
+    else return n*fatorial(n-1);
 }
 
 double serie (int n) {
@@ -12,7 +12,7 @@ double serie (int n) {
 }
 
 int main () {
-    int N;
-    scanf("%d", &N);
-    printf("%.2f", serie(N));
+    int n;
+    scanf("%d", &n);
+    printf("%.2f", serie(n));
 }

@@ -1,17 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void converteHora(int segundos) {
-    int h, min, r, seg;
-    h = segundos/3600;
-    r = segundos%3600;
-    min = r/60;
-    seg = r%60;
-    printf("%d:%d:%d", h, min, seg);
+void converteHora(int total_segundos, int *hora, int *min, int *seg) {
+    *hora = total_segundos/3600;
+    total_segundos = total_segundos%3600;
+    *min = total_segundos/60;
+    *seg = total_segundos%60;
 }
 
 int main() {
-   int seg;
-   scanf("%d", &seg);
-   converteHora(seg);
+   int total_segundos, hora, min, seg;
+   scanf("%d", &total_segundos);
+   converteHora(total_segundos, &hora, &min, &seg);
+   printf("%d:%d:%d", hora, min, seg);
 }
