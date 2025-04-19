@@ -2,16 +2,14 @@
 #include <stdlib.h>
 
 int somaDivisores (int a, int b, int c) {
-    int soma = 0, troca;
+    int soma = 0, menor;
     if (b > c) {
-        troca = b;
+        menor = b;
         b = c;
-        c = troca;
+        c = menor;
     }
     for (int cont1 = b; cont1 <= c; cont1++) {
-        if (cont1%a == 0) {
-            soma += cont1;
-        }
+        if (cont1%a == 0) soma += cont1;
     }
     return soma;
 }

@@ -3,18 +3,12 @@
 
 void arvoreComp (int N1, int N2) {
     if (N1 == 1) {
-        for (int cont1 = 1; cont1 < N2; cont1++) {
-            printf(" ");
-        }
+        for (int cont1 = 1; cont1 < N2; cont1++) printf(" ");
         printf("*\n");
     } else if (N1 > 1) {
         arvoreComp(N1 - 1, N2);
-        for (int cont1 = 1; cont1 <= N2 - N1; cont1++) {
-            printf(" ");
-        }
-        for (int cont1 = 1; cont1 <= 2 * N1 - 1; cont1++) {
-            printf("*");
-        }
+        for (int cont1 = 1; cont1 <= N2 - N1; cont1++) printf(" ");
+        for (int cont1 = 1; cont1 <= 2 * N1 - 1; cont1++) printf("*");
         printf("\n");
     }
 }

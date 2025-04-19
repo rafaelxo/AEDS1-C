@@ -2,13 +2,9 @@
 #include <stdlib.h>
 
 void verificacao(int num) {
-    if (num > 0) {
-        printf("\nNumero positivo!");
-    } else if (num == 0) {
-        printf("\nNumero nulo!");
-    } else {
-        printf("\nNumero negativo!");
-    }
+    if (num > 0) printf("\nNumero positivo!");
+    else if (num == 0) printf("\nNumero nulo!");
+    else printf("\nNumero negativo!");
 }
 
 int main() {

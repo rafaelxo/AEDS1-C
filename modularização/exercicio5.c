@@ -2,8 +2,7 @@
 #include <stdlib.h>
 
 float acrescimo (float p_antigo, float p_atual) {
-    float perc_acrescimo = ((p_atual*100.0 - p_antigo*100.0)/p_antigo);
-    return perc_acrescimo;
+    return (p_atual - p_antigo)/p_antigo*100;
 }
 
 int main () {

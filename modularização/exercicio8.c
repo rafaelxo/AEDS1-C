@@ -2,11 +2,10 @@
 #include <stdlib.h>
 
 int duracao (int h_inicio, int min_inicio, int h_termino, int min_termino) {
-    int duracao_final, minutos_inicio, minutos_termino;
+    int minutos_inicio, minutos_termino;
     minutos_inicio = h_inicio * 60 + min_inicio;
     minutos_termino = h_termino * 60 + min_termino;
-    duracao_final = minutos_termino - minutos_inicio;
-    return duracao_final;
+    return minutos_termino - minutos_inicio;
 }
 
 int main () {

@@ -2,13 +2,8 @@
 #include <stdlib.h>
 
 float medias (float n1, float n2, float n3, char opcao) {
-    float media;
-    if (opcao == 'A') {
-        media += (n1 + n2 + n3)/3.0;
-    } else if (opcao == 'P') {
-        media += (n1*5 + n2*3 + n3*2)/8.0;
-    }
-    return media;
+    if (opcao == 'A') return (n1 + n2 + n3)/3;
+    else if (opcao == 'P') return (n1*5 + n2*3 + n3*2)/8;
 }
 
 int main () {

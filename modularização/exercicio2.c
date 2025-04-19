@@ -2,15 +2,13 @@
 #include <stdlib.h>
 
 int soma (int n1, int n2) {
-    int soma = 0, troca;
+    int soma = 0, menor;
     if (n1 > n2) {
-        troca = n1;
+        menor = n1;
         n1 = n2;
-        n2 = troca;
+        n2 = menor;
     }
-    for (int cont1 = n1; cont1 <= n2; cont1++) {
-        soma += cont1;
-    }
+    for (int cont1 = n1; cont1 <= n2; cont1++) soma += cont1;
     return soma;
 }
 

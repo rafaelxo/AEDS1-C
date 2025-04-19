@@ -3,32 +3,15 @@
 
 void maiorMenor (int n1, int n2, int n3, int n4, int n5) {
     int maior = n1, menor = n1;
-    if (n2 > maior) {
-        maior = n2;
-    }
-    if (n3 > maior) {
-        maior = n3;
-    }
-    if (n4 > maior) {
-        maior = n4;
-    }
-    if (n5 > maior) {
-        maior = n5;
-    }
-    if (n2 < menor) {
-        menor = n2;
-    }
-    if (n3 < menor) {
-        menor = n3;
-    }
-    if (n4 < menor) {
-        menor = n4;
-    }
-    if (n5 < menor) {
-        menor = n5;
-    }
+    if (n2 > maior) maior = n2;
+    if (n3 > maior) maior = n3;
+    if (n4 > maior) maior = n4;
+    if (n5 > maior) maior = n5;
+    if (n2 < menor) menor = n2;
+    if (n3 < menor) menor = n3;
+    if (n4 < menor) menor = n4;
+    if (n5 < menor) menor = n5;
     printf("\nO menor e o maior valor sao, respectivamente:\n%d e %d\n", menor, maior);
-
 }
 
 int main () {
