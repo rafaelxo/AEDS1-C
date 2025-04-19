@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-float media(N) {
+float media (int N) {
     float nota, media = 0, q_aprovados = 0;
     for (int cont1 = 1; cont1 <= N; cont1++) {
         scanf("%f", &nota);

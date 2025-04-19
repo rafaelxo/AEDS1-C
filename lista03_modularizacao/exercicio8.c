@@ -2,10 +2,9 @@
 #include <stdio.h>
 
 float conta (int N) {
-    int num = 2;
-    float S = 0;
+    float S = 0, num = 2;
     for (int cont1 = 1; cont1 <= N; cont1++) {
-        S += num*1.0/(cont1+3);
+        S += num/(cont1+3);
         num += cont1*2 + 1;
     }
     return S;
