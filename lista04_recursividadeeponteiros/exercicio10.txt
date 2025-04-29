@@ -1,4 +1,4 @@
-Questão 8 - Lista04_Recursividade e Ponteiros
+Questão 10 - Lista04_Recursividade e Ponteiros
 
 As diferenças ocorrem nas linhas 8 e 10.
 No código 1 para a linha 8, o que ocorre é o acréscimo de uma unidade no valor do conteúdo de "*ptr" (inicialmente 10) a cada iteração do laço, aumentando em 5 unidades (totalizando 15). Já no código 2, o que acontece é o deslocamento do ponteiro "ptr" para o próximo endereço de memória a cada iteração da repetição (sem alterar o valor do conteúdo de "*ptr"), avançando 5 vezes;
