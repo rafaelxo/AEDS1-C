@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main () {
-    FILE *arquivo = fopen("entrada.txt", "w+");
+    FILE *arquivo = fopen("entrada.txt", "w");
     int N;
     float num, media = 0, menor, maior; 
     scanf("%d", &N);

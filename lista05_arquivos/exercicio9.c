@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main () {
-    FILE *arquivo = fopen("saida.txt", "w+");
-    FILE *arquivo2 = fopen("entrada.txt", "w+");
+    FILE *arquivo = fopen("saida.txt", "w");
+    FILE *arquivo2 = fopen("entrada.txt", "w");
     int opcao, matricula, telefone;
     scanf("%d", &opcao);
     if (opcao == 1) {

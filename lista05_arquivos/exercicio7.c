@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main () {
-    FILE *arquivo = fopen("arq7.txt", "w+");
+    FILE *arquivo = fopen("arq7.txt", "w");
     int N, vogais = 0;
     char letra;
     scanf("%d", &N);
