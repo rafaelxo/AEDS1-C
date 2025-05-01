@@ -30,7 +30,7 @@ void gerarDados () {
 int main () {
     gerarDados();
     FILE *arquivo = fopen("arqSalvar.txt", "r");
-    FILE *arquivo2 = fopen("arqSalario.txt", "r");
+    FILE *arquivo2 = fopen("arqSalario.txt", "w");
     float *sal_atual = (float*)malloc(sizeof(float));
     float juros;
     int N, meses;
@@ -38,7 +38,7 @@ int main () {
     for (int cont1 = 1; cont1 <= N; cont1++) {
         fscanf(arquivo, "%f%f%d", sal_atual, &juros, &meses);
         printf("Salario novo: %.2f\n", calculaJuros(sal_atual, juros, meses));
-        fprintf(arquivo2, "Salario novo: %.2f\n", calculaJuros(sal_atual, juros, meses));
+        fprintf(arquivo2, "%.2f\n", calculaJuros(sal_atual, juros, meses));
     }
     free(sal_atual);
     fclose(arquivo); fclose(arquivo2);

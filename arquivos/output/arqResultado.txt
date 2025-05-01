@@ -1,0 +1,8 @@
+
+Quadrado
+Area: 16.00
+Perimetro: 16.00
+
+Triangulo
+Area: 0.43
+Perimetro: 3.00
