@@ -20,5 +20,5 @@ int main () {
         printf("Insira, respectivamente, um valor para A (positivo), para B e para C:\n");
         scanf("%d%d%d", &a, &b, &c);
     } while (a <= 0);
-    printf("\nA quantidade de numeros divisiveis por %d de %d ate %d e %d!\n", a, b, c, somaDivisores(a, b, c));
+    printf("\nA soma dos numeros divisiveis por %d de %d ate %d e %d!\n", a, b, c, somaDivisores(a, b, c));
 }

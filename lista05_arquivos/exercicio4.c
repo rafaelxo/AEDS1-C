@@ -2,9 +2,13 @@
 #include <stdlib.h>
 
 int main () {
-    FILE *arquivo = fopen("arq4.txt", "w");
     int linhas = 0;
-    
+    char texto[100];
+    FILE *arquivo = fopen("arqX.txt", "r");
+    while (fgets(texto, sizeof(texto), arquivo) != NULL) {
+        printf("%s", texto);
+        linhas++;
+    }
     fclose(arquivo);
-    printf(arquivo, "%d LINHAS", linhas);
+    printf("%d LINHAS", linhas);
 }

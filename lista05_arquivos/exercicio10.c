@@ -17,15 +17,12 @@ int main () {
         fscanf(arquivo, "%f", &num);
         media += num;
         if (cont1 == 0) {
-            menor = num;
-            maior = num;
+            menor = num; maior = num;
         } else {
             if (num < menor) menor = num;
             if (num > maior) maior = num;
         }
     }
     fclose(arquivo);
-    printf("%.2f\n", maior);
-    printf("%.2f\n", menor);
-    printf("%.2f\n", media / 100);
+    printf("%.2f\n%.2f\n%.2f", maior, menor, media/100);
 }

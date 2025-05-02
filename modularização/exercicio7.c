@@ -13,7 +13,7 @@ int main () {
     printf("Insira a quantidade de alunos que deseja calcular:\n");
     scanf("%d", &N);
     for (int cont1 = 1; cont1 <= N; cont1++) {
-        printf("\nInsira as 3 notas do aluno e a media que deseja calcular (A = aritmetica ou P - ponderada):\n");
+        printf("\nInsira as 3 notas do aluno e a media que deseja calcular (A - aritmetica ou P - ponderada):\n");
         scanf("%f%f%f %c", &n1, &n2, &n3, &opcao);
         printf("\nO valor da media %c desse aluno e de %.2f pontos!\n", opcao, medias(n1, n2, n3, opcao));
     }

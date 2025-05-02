@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main () {
-    FILE *arquivo = fopen("arqSomaDiv.txt", "w");
+    FILE *arquivo = fopen("arq6.txt", "w");
     int num, soma = 0;
     scanf("%d", &num);
     for (int cont1 = 1; cont1 <= num; cont1++) {
