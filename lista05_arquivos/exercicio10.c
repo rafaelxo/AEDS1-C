@@ -17,7 +17,8 @@ int main () {
         fscanf(arquivo, "%f", &num);
         media += num;
         if (cont1 == 0) {
-            menor = num; maior = num;
+            menor = num;
+            maior = num;
         } else {
             if (num < menor) menor = num;
             if (num > maior) maior = num;
