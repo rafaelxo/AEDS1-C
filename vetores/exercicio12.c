@@ -2,11 +2,12 @@
 #include <stdio.h>
 
 int main() {
-    int m[5], c[5], economico, menor_c;
+    int c[5], economico, menor_c;
+    char m[5];
     float media;
     for (int cont1 = 0; cont1 < 5; cont1++) {
-        printf("Digite o numero do modelo do carro %d:\n", cont1 + 1);
-        scanf("%d", &m[cont1]);
+        printf("Digite a inicial do modelo do %d carro:\n", cont1 + 1);
+        scanf(" %c", &m[cont1]);
     }
     for (int cont1 = 0; cont1 < 5; cont1++) {
         media = 0;
@@ -22,7 +23,7 @@ int main() {
             }
         }
         media = 1000.0 / c[cont1];
-        printf("\nO modelo do carro %d faz %.2f km/litro!\n", m[cont1], media);
+        printf("\nO modelo do carro %c faz %.2f km/litro!\n", m[cont1], media);
     }
-    printf("\nO carro mais economico e o modelo %d, fazendo %.2f km/litro!\n", m[economico], 1000.0/menor_c);
+    printf("\nO carro mais economico e o modelo %c, fazendo %.2f km/litro!\n", m[economico], 1000.0/menor_c);
 }

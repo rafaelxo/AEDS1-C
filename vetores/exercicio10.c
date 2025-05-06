@@ -3,7 +3,6 @@
 
 int main() {
     int N, n_aluno, pontos, aprovados = 0;
-    float perc_aprovados = 0;
     char g[8], r[8];
     for (int cont1 = 0; cont1 < 8; cont1++) {
         printf("Digite o gabarito da questao %d:\n", cont1 + 1);
@@ -24,10 +23,7 @@ int main() {
         if (pontos >= 6) {
             printf("Aprovado!\n");
             aprovados++;
-        } else {
-            printf("Reprovado!\n");
-        }
+        } else printf("Reprovado!\n");
     }
-    perc_aprovados = (aprovados*100.0)/N;
-    printf("\nA porcentagem de alunos aprovados foi de %.2f%%\n", perc_aprovados);
+    printf("\nA porcentagem de alunos aprovados foi de %.2f%%\n", (aprovados*100.0)/N);
 }

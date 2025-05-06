@@ -1,10 +1,8 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdbool.h>
 
 int main() {
     int dividendo[10], divisor[5];
-    bool achou;
     for (int cont1 = 0; cont1 < 10; cont1++) {
         printf("Digite o valor da posicao %d do vetor X:\n", cont1 + 1);
         scanf("%d", &dividendo[cont1]);
@@ -14,14 +12,10 @@ int main() {
         scanf("%d", &divisor[cont1]);
     }
     for (int cont1 = 0; cont1 < 10; cont1++) {
-        achou = false;
         printf("\nO valor %d do vetor X na posicao %d eh divisivel por:\n", dividendo[cont1], cont1 + 1);
         for (int cont2 = 0; cont2 < 5; cont2++) {
-            if (dividendo[cont1] % divisor[cont2] == 0) {
-                printf("%d na posicao %d!\n", divisor[cont2], cont2 + 1);
-                achou = true;
-            }
+            if (dividendo[cont1] % divisor[cont2] == 0) printf("%d na posicao %d!\n", divisor[cont2], cont2 + 1);
+            else printf("Nenhum valor do vetor Y e divisor do vetor X!\n");
         }
-        if (!achou) printf("Nenhum valor do vetor Y e divisor do vetor X!\n");
     }
 }

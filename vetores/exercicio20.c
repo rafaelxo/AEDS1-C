@@ -2,8 +2,8 @@
 #include <stdio.h>
 
 int main() {
-    float x[5];
     int cod;
+    float x[5];
     for (int cont1 = 0; cont1 < 5; cont1++) {
         printf("Digite o valor para a posicao %d do vetor X:\n", cont1 + 1);
         scanf("%f", &x[cont1]);
