@@ -2,18 +2,27 @@
 #include <stdlib.h>
 
 int main () {
-    FILE *arquivo = fopen("saida.txt", "w");
     int opcao, matricula, telefone;
     scanf("%d", &opcao);
-    if (opcao == 1) {
-        while (1) {
+    FILE *arquivo = fopen("saida9.txt", "w");
+    FILE *arquivo2;
+    switch (opcao) {
+        case 1:
+            arquivo2 = fopen("entrada9.txt", "w");
             scanf("%d%d", &matricula, &telefone);
-            fprintf(arquivo, "%d %d\n", matricula, telefone);
+            while (matricula != -1) {
+                fprintf(arquivo, "%d %d\n", matricula, telefone);
+                fprintf(arquivo2, "%d %d\n", matricula, telefone);
+                scanf("%d%d", &matricula, &telefone);
+            }
+            fclose(arquivo2);
+            break;
+        case 2: {
+            arquivo2 = fopen("entrada9.txt", "r");
+            while (fscanf(arquivo2, "%d%d", &matricula, &telefone) != EOF) fprintf(arquivo, "%d %d\n", matricula, telefone);
+            fclose(arquivo2);
+            break;
         }
-    } else if (opcao == 2) {
-        FILE *arquivo2 = fopen("entrada.txt", "r");
-        while (fscanf(arquivo2, "%d%d", &matricula, &telefone) != EOF) fprintf(arquivo, "%d %d\n", matricula, telefone);
-        fclose(arquivo2);
     }
     fclose(arquivo);
 }

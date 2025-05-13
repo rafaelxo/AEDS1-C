@@ -6,7 +6,7 @@ int main () {
     int N, vogais = 0;
     char letra;
     scanf("%d", &N);
-    for (int cont1 = 1; cont1 <= N; cont1++) {
+    for (int i = 0; i < N; i++) {
         scanf(" %c", &letra);
         fprintf(arquivo, "%c\n", letra);
     }
@@ -14,5 +14,5 @@ int main () {
     arquivo = fopen("arq7.txt", "r");
     while (fscanf(arquivo, "%c", &letra) != EOF) if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' || letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U') vogais++;
     fclose(arquivo);
-    printf("%d", vogais);
+    printf("%d\n", vogais);
 }

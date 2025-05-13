@@ -1,4 +1,4 @@
 Exemplo de texto
 Escrito dentro do arquivo
-Com varias linhas
-Para analise
+Com várias linhas
+Para análise

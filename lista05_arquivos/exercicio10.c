@@ -4,7 +4,7 @@
 #include <time.h>
 
 int main () {
-    FILE *arquivo = fopen("entrada1.txt", "w");
+    FILE *arquivo = fopen("entrada10.txt", "w");
     float num, media = 0, menor, maior;
     srand((unsigned)time(NULL));
     for (int cont1 = 0; cont1 < 100; cont1++) {
@@ -12,7 +12,7 @@ int main () {
         fprintf(arquivo, "%f\n", num);
     }
     fclose(arquivo);
-    arquivo = fopen("entrada1.txt", "r");
+    arquivo = fopen("entrada10.txt", "r");
     for (int cont1 = 0; cont1 < 100; cont1++) {
         fscanf(arquivo, "%f", &num);
         media += num;

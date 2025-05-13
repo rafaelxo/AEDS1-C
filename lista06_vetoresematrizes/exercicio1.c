@@ -8,9 +8,7 @@ void recebeNotas (float *notas) {
 void media (float *notas) {
     int q = 0;
     float media = 0;
-    for (int i = 0; i < 10; i++)  {
-        media += notas[i];
-    }
+    for (int i = 0; i < 10; i++) media += notas[i];
     media /= 10;
     for (int i = 0; i < 10; i++) if (notas[i] > media) q++;
     printf("Media: %.2f\n", media);

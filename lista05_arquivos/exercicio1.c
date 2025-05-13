@@ -3,6 +3,6 @@
 
 int main () {
     FILE *arquivo = fopen("arq1.txt", "w");
-    for (int cont1 = 1; cont1 <= 10; cont1++) fprintf(arquivo, "%d\n", cont1);
+    for (int i = 1; i <= 10; i++) fprintf(arquivo, "%d\n", i);
     fclose(arquivo);
 }
