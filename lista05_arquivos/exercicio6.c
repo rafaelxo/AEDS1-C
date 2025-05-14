@@ -5,10 +5,10 @@ int main () {
     FILE *arquivo = fopen("arq6.txt", "w");
     int num, soma = 0;
     scanf("%d", &num);
-    for (int cont1 = 1; cont1 <= num; cont1++) {
-        if (num % cont1 == 0) {
-            printf("%d\n", cont1);
-            soma += cont1;
+    for (int i = 1; i <= num; i++) {
+        if (num % i == 0) {
+            printf("%d\n", i);
+            soma += i;
         }
     }
     fprintf(arquivo, "%d", soma);

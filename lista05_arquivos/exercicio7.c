@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
 
 int main () {
     FILE *arquivo = fopen("arq7.txt", "w");
@@ -12,7 +14,10 @@ int main () {
     }
     fclose(arquivo);
     arquivo = fopen("arq7.txt", "r");
-    while (fscanf(arquivo, "%c", &letra) != EOF) if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u' || letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U') vogais++;
+    while (fscanf(arquivo, "%c", &letra) != EOF) {
+        letra = toupper(letra);
+        if (letra == 'A' || letra == 'E' || letra == 'I' || letra == 'O' || letra == 'U') vogais++;
+    }
     fclose(arquivo);
     printf("%d\n", vogais);
 }
