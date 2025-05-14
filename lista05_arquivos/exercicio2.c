@@ -3,8 +3,8 @@
 #include <string.h>
 
 int main () {
-    char texto[100];
     FILE *arquivo = fopen("arq2.txt", "w");
+    char texto[100];
     scanf(" %[^\n]", texto);
     fprintf(arquivo, "%s", texto);
     fclose(arquivo);

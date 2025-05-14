@@ -3,10 +3,10 @@
 #include <string.h>
 
 int main () {
+    FILE *arquivo = fopen("arq2.txt", "r");
     int caracteres = 0;
     char caracter;
-    FILE *arquivo = fopen("arq2.txt", "r");
-    while ((caracter = fgetc(arquivo)) != EOF) if (caracter == 'a' || caracter == 'A') caracteres++;
+    while (fscanf(arquivo, " %[^\n]", &caracter) != EOF) if (caracter == 'a' || caracter == 'A') caracteres++;
     fclose(arquivo);
     printf("%d CARACTERES\n", caracteres);
 }
