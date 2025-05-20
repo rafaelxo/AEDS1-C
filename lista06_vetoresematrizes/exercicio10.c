@@ -12,10 +12,10 @@ int main () {
         letra = *(texto + i);
         while (letra != ' ' && letra != '\0') {
             if (letra == 'a' || letra == 'A' || letra == 'e' || letra == 'E' || letra == 'i' || letra == 'I' || letra == 'o' || letra == 'U' || letra == 'u' || letra == 'U') vogais++;
-            else consoantes++;
+            else if (letra >= 'a' && letra <= 'z') consoantes++;
             letra = '\0';
         }
     }
-    printf("Vogais: %d\nConsoantes: %d\n", vogais, consoantes);
+    printf("Vogais: %d\nConsoantes: %d\n", vogais, consoantes - vogais);
     free(texto);
 }

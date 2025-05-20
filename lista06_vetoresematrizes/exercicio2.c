@@ -6,15 +6,15 @@ int main () {
     float temp[31], menor_t, maior_t, media_t = 0;
     for (int i = 0; i < 31; i++) {
         scanf("%f", &temp[i]);
+        media_t += temp[i];
         if (i == 0) {
             menor_t = temp[i];
             maior_t = temp[i];
         }
-        media_t += temp[i];
-    }
-    for (int i = 0; i < 31; i++) {
-        if (temp[i] > maior_t) maior_t = temp[i];
-        else if (temp[i] < menor_t) menor_t = temp[i];
+        else {
+            if (temp[i] > maior_t) maior_t = temp[i];
+            else if (temp[i] < menor_t) menor_t = temp[i];
+        }
     }
     media_t /= 31;
     for (int i = 0; i < 31; i++) if (temp[i] > media_t) dias++;

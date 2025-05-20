@@ -10,7 +10,7 @@ void media (float *notas) {
     float media = 0;
     for (int i = 0; i < 10; i++) media += notas[i];
     media /= 10;
-    for (int i = 0; i < 10; i++) if (notas[i] > media) q++;
+    for (int i = 0; i < 10; i++) if (notas[i] >= 6) q++;
     printf("Media: %.2f\n", media);
     printf("Alunos acima da media: %d\n", q);
 }
