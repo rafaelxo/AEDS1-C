@@ -17,7 +17,6 @@ void media (float *notas) {
 
 int main () {
     float *notas = (float*)malloc(10*sizeof(float));
-    recebeNotas(notas);
-    media(notas);
+    recebeNotas(notas); media(notas);
     free(notas);
 }

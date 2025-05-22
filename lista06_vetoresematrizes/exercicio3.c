@@ -21,8 +21,6 @@ int main () {
     int *x = (int*)malloc(10*sizeof(int));
     int *y = (int*)malloc(10*sizeof(int));
     int *z = (int*)malloc(20*sizeof(int));
-    preenche(x, y);
-    intercala(x, y, z);
-    exibe(z);
+    preenche(x, y); intercala(x, y, z); exibe(z);
     free(x); free(y); free(z);
 }

@@ -9,13 +9,13 @@ void preenche (int *matriz) {
 
 int somA (int *matriz) {
     int somA = 0;
-    for (int j = 0; j < 5; j++) somA += *(matriz + 3*5 + j);
+    for (int j = 0; j < 5; j++) somA += *(matriz + 4*5 + j);
     return somA;
 }
 
 int somB (int *matriz) {
     int somB = 0;
-    for (int i = 0; i < 5; i++) somB += *(matriz + i*5 + 1);
+    for (int i = 0; i < 5; i++) somB += *(matriz + i*5 + 2);
     return somB;
 }
 
