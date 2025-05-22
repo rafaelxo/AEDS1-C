@@ -17,8 +17,8 @@ int main () {
         }
     }
     media_t /= 31;
-    for (int i = 0; i < 31; i++) if (temp[i] > media_t) dias++;
-    printf("Menor e maior temperatura: %.2f e %.2f\n", menor_t, maior_t);
+    for (int i = 0; i < 31; i++) if (temp[i] < media_t) dias++;
+    printf("Menor e maior temperatura: %.0f e %.0f\n", menor_t, maior_t);
     printf("Media de temperatura: %.2f\n", media_t);
-    printf("Numero de dias nos quias a temperatura foi inferior a temperatura media: %d\n", dias);
+    printf("Numero de dias nos quais a temperatura foi inferior a temperatura media: %d\n", dias);
 }
