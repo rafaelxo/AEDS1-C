@@ -5,8 +5,15 @@
 int main () {
     int N;
     scanf("%d", &N);
-    char *caracter = (char*)malloc(N*sizeof(char));
-    for (int i = 0; i < N; i++) scanf(" %c", (caracter + i));
-    for (char *inversao = caracter + N; inversao >= caracter; inversao--) printf("%c", *inversao);
-    free(caracter);
+    char *texto = (char*)malloc(N*sizeof(char));
+    scanf(" %[^\n]", texto);
+    char *inverso = (char*)malloc(N*sizeof(char));
+    int i = 0;
+    while (*(texto + i) != '\0') {
+        *(inverso + i) = *(texto + N - 1 - i);
+        i++;
+    }
+    *(inverso + i) = '\0';
+    printf("%s", inverso);
+    free(texto); free(inverso);
 }
