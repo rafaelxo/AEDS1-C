@@ -23,7 +23,7 @@ int main () {
     char *texto = (char*)malloc(100*sizeof(char));
     scanf(" %[^\n]", texto);
     int tam = strlen(texto);
-    printf("As permutacoes da string sao:\n");
+    printf("As permutações da string são:\n");
     permutacao(texto, 0, tam - 1);
     printf("\n");
     free(texto);
