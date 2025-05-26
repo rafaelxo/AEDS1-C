@@ -1,0 +1,32 @@
+RELATÓRIO DE INTERAÇÃO - ANÁLISE DE CÓDIGO EM C
+
+1. OBJETIVO DO CÓDIGO
+O programa em C lê uma string de até 100 caracteres e gera todas as suas permutações possíveis, exibindo-as.
+
+2. ESTRUTURA DO CÓDIGO
+- Função `troca(char *a, char *b)`: Troca os valores de dois caracteres apontados por `a` e `b`.
+- Função `permutacao(char *texto, int inicio, int final)`: Implementa um algoritmo recursivo para gerar todas as permutações da string, trocando caracteres a partir do índice `inicio` até `final` e imprimindo cada permutação quando `inicio` iguala `final`.
+- `main()`: Aloca dinamicamente memória para uma string de até 100 caracteres, lê a string do usuário, calcula seu tamanho com `strlen`, chama `permutacao` para gerar e exibir as permutações, e libera a memória com `free`.
+
+3. FUNCIONAMENTO COM EXEMPLO
+Entrada:
+abc
+
+Saída esperada:
+As permutações da string são:
+abc acb bac bca cab cba
+
+4. PONTOS POSITIVOS
+- Uso correto de alocação dinâmica com `malloc` e liberação com `free`.
+- Implementação clara e eficiente do algoritmo recursivo de permutação.
+- Uso do formato `%[^\n]` em `scanf` para ler strings com espaços.
+
+5. MELHORIAS SUGERIDAS
+- Verificar se a alocação com `malloc` foi bem-sucedida antes de usar a string.
+- Adicionar validação para limitar o tamanho da string (ex.: evitar entradas muito longas ou vazias).
+- Incluir mensagens de orientação ao usuário para indicar como inserir a string (ex.: "Digite uma string para permutação").
+
+6. COMENTÁRIO FINAL
+O código é funcional e implementa corretamente o algoritmo recursivo para gerar permutações de uma string. Pequenas melhorias em validação e usabilidade podem torná-lo mais robusto e amigável.
+
+Gerado por ChatGPT - Tutor de Programação

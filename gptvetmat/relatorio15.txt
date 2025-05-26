@@ -1,0 +1,59 @@
+RELATÓRIO DE INTERAÇÃO - ANÁLISE DE CÓDIGO EM C
+
+1. OBJETIVO DO CÓDIGO
+O programa em C gera uma matriz com dimensões aleatórias (1 a 10), preenche-a com números aleatórios (0 a 999), calcula a soma dos elementos de cada linha e a quantidade de números pares em cada coluna, exibe os resultados e grava-os em um arquivo de saída.
+
+2. ESTRUTURA DO CÓDIGO
+- Função `geraArquivoDados(int *ptrM, int *ptrN)`: Gera dimensões aleatórias M e N (1 a 10), cria um arquivo "numeros.txt" e grava M, N e uma matriz MxN com valores aleatórios.
+- Função `preenche(int *matriz, int totalLn, int totalCol)`: Lê M, N e os elementos da matriz de "numeros.txt" e preenche a matriz.
+- Função `exibeMatriz(int *mat, int totalLn, int totalCol)`: Exibe a matriz com formatação.
+- Função `somaLinhas(int *matriz, int *somas, int totalLn, int totalCol)`: Calcula a soma dos elementos de cada linha da matriz.
+- Função `quantPares(int *matriz, int *quantidades, int totalLn, int totalCol)`: Conta a quantidade de números pares em cada coluna.
+- Função `exibeVetor(int *vet, int total)`: Exibe os elementos de um vetor.
+- Função `geraArquivoSaida(int *somas, int *pares, int M, int N)`: Grava as somas das linhas e a quantidade de pares por coluna em "saida.txt".
+- `main()`: Inicializa a semente do gerador aleatório com `srand`, chama `geraArquivoDados`, aloca a matriz e vetores, preenche a matriz, exibe os dados, calcula e exibe as somas e quantidades de pares, e grava os resultados.
+
+3. FUNCIONAMENTO COM EXEMPLO
+Entrada: Nenhuma (os dados são gerados aleatoriamente).
+
+Exemplo de saída (para M=3, N=4, com matriz gerada aleatoriamente):
+Matriz 3 x 4
+Dados gravados:
+123 456 789 234
+567 890 123 456
+789 234 567 890
+
+Soma das linhas:
+1602 2036 2480
+
+Quantidade de pares por coluna, respectivamente:
+1 3 1 2
+
+Arquivos gerados:
+- `numeros.txt`:
+```
+3 4
+123 456 789 234
+567 890 123 456
+789 234 567 890
+```
+- `saida.txt`:
+```
+1602 2036 2480
+1 3 1 2
+```
+
+4. PONTOS POSITIVOS
+- Uso eficiente de alocação estática para a matriz e vetores, com dimensões definidas dinamicamente.
+- Funções bem definidas, cada uma com uma responsabilidade específica (geração, leitura, cálculo e exibição).
+- Manipulação correta de arquivos para entrada e saída de dados.
+
+5. MELHORIAS SUGERIDAS
+- Verificar se os arquivos foram abertos com sucesso antes de ler ou escrever.
+- Adicionar validação para garantir que M e N sejam válidos no momento da leitura do arquivo.
+- Incluir mensagens de erro para falhas na abertura de arquivos ou na alocação de memória (embora não use `malloc` diretamente).
+
+6. COMENTÁRIO FINAL
+O código é funcional e bem estruturado, realizando eficientemente a geração, processamento e gravação de dados de uma matriz. Pequenas melhorias em validação e tratamento de erros podem torná-lo mais robusto.
+
+Gerado por ChatGPT - Tutor de Programação

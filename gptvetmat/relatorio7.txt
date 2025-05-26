@@ -1,0 +1,41 @@
+RELATÓRIO DE INTERAÇÃO - ANÁLISE DE CÓDIGO EM C
+
+1. OBJETIVO DO CÓDIGO
+O programa em C lê duas matrizes 4x6 de inteiros, calcula a soma e a diferença entre elas (elemento a elemento) e exibe as matrizes resultantes.
+
+2. ESTRUTURA DO CÓDIGO
+- Função `preenche(int *mat)`: Lê 24 inteiros do usuário para preencher uma matriz 4x6, tratada como um vetor unidimensional.
+- Função `mostra(int *mat)`: Exibe os 24 elementos de uma matriz 4x6.
+- Função `somaAB(int *mat1, int *mat2)`: Calcula a soma elemento a elemento de duas matrizes 4x6, retornando um novo vetor alocado dinamicamente.
+- Função `diferencaAB(int *mat1, int *mat2)`: Calcula a diferença elemento a elemento (mat1 - mat2) de duas matrizes 4x6, retornando um novo vetor alocado dinamicamente.
+- `main()`: Aloca dinamicamente memória para duas matrizes 4x6 (`A` e `B`), chama `preenche` para cada uma, calcula a soma (`S`) e a diferença (`D`) usando as funções correspondentes, exibe os resultados com `mostra` e libera a memória com `free`.
+
+3. FUNCIONAMENTO COM EXEMPLO
+Entrada (matriz A seguida da matriz B):
+1 2 3 4 5 6
+7 8 9 10 11 12
+13 14 15 16 17 18
+19 20 21 22 23 24
+1 1 1 1 1 1
+2 2 2 2 2 2
+3 3 3 3 3 3
+4 4 4 4 4 4
+
+Saída esperada:
+2 3 4 5 6 7 9 10 11 12 13 14 16 17 18 19 20 21 23 24 25 26 27 28
+0 1 2 3 4 5 5 6 7 8 9 10 10 11 12 13 14 15 15 16 17 18 19 20
+
+4. PONTOS POSITIVOS
+- Uso correto de alocação dinâmica com `malloc` e liberação com `free` para todas as matrizes.
+- Funções bem definidas, cada uma com uma responsabilidade específica (leitura, exibição, soma e diferença).
+- Tratamento eficiente das matrizes como vetores unidimensionais, simplificando o acesso aos elementos.
+
+5. MELHORIAS SUGERIDAS
+- Verificar se as alocações com `malloc` foram bem-sucedidas antes de usar as matrizes.
+- Adicionar validação para entradas inválidas (ex.: valores não inteiros).
+- Incluir mensagens de orientação ao usuário para indicar quando inserir os valores de cada matriz (ex.: "Digite os valores da matriz A").
+
+6. COMENTÁRIO FINAL
+O código é funcional e bem estruturado, realizando eficientemente as operações de soma e diferença entre matrizes. Pequenas melhorias em validação e usabilidade podem torná-lo mais robusto e amigável.
+
+Gerado por ChatGPT - Tutor de Programação

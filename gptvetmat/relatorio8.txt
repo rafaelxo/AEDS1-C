@@ -1,0 +1,40 @@
+RELATÓRIO DE INTERAÇÃO - ANÁLISE DE CÓDIGO EM C
+
+1. OBJETIVO DO CÓDIGO
+O programa em C lê uma matriz 10x10 de inteiros, realiza trocas específicas (linha 2 com linha 8, coluna 4 com coluna 10, diagonal principal com secundária, e linha 5 com coluna 10) e exibe a matriz resultante.
+
+2. ESTRUTURA DO CÓDIGO
+- Função `preenche(int *matriz)`: Lê 100 inteiros do usuário para preencher uma matriz 10x10, tratada como um vetor unidimensional.
+- Função `linha2PRA8(int *matriz)`: Troca os elementos da linha 2 (índice 1) com os da linha 8 (índice 7).
+- Função `coluna4PRA10(int *matriz)`: Troca os elementos da coluna 4 (índice 3) com os da coluna 10 (índice 9).
+- Função `diagonalPrimRRASec(int *matriz)`: Troca os elementos da diagonal principal (i = j) com os da diagonal secundária (j = 9 - i).
+- Função `linha5PRAcoluna10(int *matriz)`: Troca os elementos da linha 5 (índice 4) com os da coluna 10 (índice 9).
+- Função `exibeMatriz(int *matriz)`: Exibe os 100 elementos da matriz 10x10.
+- `main()`: Aloca dinamicamente memória para a matriz, chama `preenche`, realiza as trocas com as funções correspondentes, exibe a matriz com `exibeMatriz` e libera a memória com `free`.
+
+3. FUNCIONAMENTO COM EXEMPLO
+Entrada (matriz 10x10 simplificada, valores de 1 a 100 em ordem de leitura):
+1 2 3 4 5 6 7 8 9 10
+11 12 13 14 15 16 17 18 19 20
+...
+91 92 93 94 95 96 97 98 99 100
+
+Saída esperada (após todas as trocas, apenas os primeiros elementos para ilustração):
+1 2 9 4 5 6 7 98 9 2
+71 72 79 74 75 76 77 18 79 78
+...
+
+4. PONTOS POSITIVOS
+- Uso correto de alocação dinâmica com `malloc` e liberação com `free`.
+- Funções bem definidas, cada uma responsável por uma operação específica (leitura, trocas e exibição).
+- Tratamento eficiente da matriz como um vetor unidimensional, facilitando o acesso aos elementos.
+
+5. MELHORIAS SUGERIDAS
+- Verificar se a alocação com `malloc` foi bem-sucedida antes de usar a matriz.
+- Adicionar validação para entradas inválidas (ex.: valores não inteiros).
+- Incluir mensagens de orientação ao usuário para indicar como inserir os valores da matriz (ex.: "Digite os valores da matriz 10x10").
+
+6. COMENTÁRIO FINAL
+O código é funcional e bem estruturado, realizando as trocas solicitadas na matriz de forma eficiente. Pequenas melhorias em validação e usabilidade podem torná-lo mais robusto e amigável.
+
+Gerado por ChatGPT - Tutor de Programação

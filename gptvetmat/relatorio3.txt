@@ -1,0 +1,33 @@
+RELATÓRIO DE INTERAÇÃO - ANÁLISE DE CÓDIGO EM C
+
+1. OBJETIVO DO CÓDIGO
+O programa em C lê dois vetores de 10 inteiros cada, intercala seus elementos em um terceiro vetor e exibe o resultado.
+
+2. ESTRUTURA DO CÓDIGO
+- Função `preenche(int *x, int *y)`: Lê 10 inteiros para o vetor `x` e 10 inteiros para o vetor `y` a partir da entrada do usuário.
+- Função `intercala(int *x, int *y, int *z)`: Intercala os elementos dos vetores `x` e `y` no vetor `z`, alternando um elemento de `x` e um de `y`.
+- Função `exibe(int *z)`: Exibe os 20 elementos do vetor `z`.
+- `main()`: Aloca dinamicamente memória para três vetores (`x`, `y` e `z`), chama as funções `preenche`, `intercala` e `exibe`, e libera a memória alocada.
+
+3. FUNCIONAMENTO COM EXEMPLO
+Entrada:
+Vetor x: 1 3 5 7 9 11 13 15 17 19
+Vetor y: 2 4 6 8 10 12 14 16 18 20
+
+Saída esperada:
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+
+4. PONTOS POSITIVOS
+- Uso correto de alocação dinâmica com `malloc` e liberação com `free`.
+- Funções bem definidas com responsabilidades específicas (leitura, intercalação e exibição).
+- Lógica clara para intercalar os vetores, garantindo a ordem correta dos elementos.
+
+5. MELHORIAS SUGERIDAS
+- Verificar se as alocações com `malloc` foram bem-sucedidas antes de usar os vetores.
+- Adicionar validação para entradas inválidas (ex.: valores não inteiros).
+- Incluir mensagens de orientação ao usuário para indicar quando inserir os valores de cada vetor.
+
+6. COMENTÁRIO FINAL
+O código é funcional e bem estruturado, cumprindo eficientemente o objetivo de intercalar dois vetores. Pequenas melhorias podem torná-lo mais robusto e amigável ao usuário.
+
+Gerado por ChatGPT - Tutor de Programação
