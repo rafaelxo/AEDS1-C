@@ -39,12 +39,15 @@ void linha5PRAcoluna10 (int *matriz) {
     }
 }
 
-int main () {
-    int *M = (int*)malloc(10*10*sizeof(int));
-    preenche(M); linha2PRA8(M); coluna4PRA10(M); diagonalPrimRRASec(M); linha5PRAcoluna10(M);
+void exibeMatriz (int *matriz) {
     for (int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) printf("%d ", *(M + i*10 + j));
-        printf("\n");
+        for (int j = 0; j < 10; j++) printf("%d ", *(matriz + i*10 + j));
     }
-    free(M);
+}
+
+int main () {
+    int *mat = (int*)malloc(10*10*sizeof(int));
+    preenche(mat); linha2PRA8(mat); coluna4PRA10(mat); diagonalPrimRRASec(mat); linha5PRAcoluna10(mat);
+    exibeMatriz(mat);
+    free(mat);
 }
