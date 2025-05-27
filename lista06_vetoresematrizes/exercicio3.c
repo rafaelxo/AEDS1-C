@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 void preenche (int *x, int *y) {
-    for (int i = 0; i < 10; i++) scanf("%d", &x[i]);
-    for (int i = 0; i < 10; i++) scanf("%d", &y[i]);
+    for (int i = 0; i < 10; i++) scanf("%d", (x + i));
+    for (int i = 0; i < 10; i++) scanf("%d", (y + i));
 }
 
 void intercala (int *x, int *y, int *z) {
     for (int i = 0; i < 10; i++) {
-        z[i*2] = x[i];
-        z[i*2+1] = y[i];
+        *(z + i*2) = *(x + i);
+        *(z + i*2 + 1) = *(y + i);
     }
 }
 

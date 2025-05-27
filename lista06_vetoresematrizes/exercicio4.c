@@ -8,9 +8,9 @@ int main () {
     int maior;
     for (int i = 0; i < N; i++) {
         scanf("%d", (vetor + i));
-        if (i == 0) maior = vetor[i];
+        if (i == 0) maior = *(vetor + i);
         else {
-            if (vetor[i] > maior) maior = vetor[i];
+            if (*(vetor + i) > maior) maior = *(vetor + i);
         }
     }
     printf("%d\n", maior);
