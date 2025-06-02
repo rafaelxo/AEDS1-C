@@ -5,10 +5,10 @@ typedef struct pessoa {
     char *nome;
     int dia_a;
     int mes_a;
-} pessoa;
+} pss;
 
 int main () {
-    pessoa p[40];
+    pss p[40];
     for (int i = 0; i < 40; i++) {
         (p + i)->nome = (char *)malloc(100*sizeof(char));
         scanf(" %[^\n]", (p + i)->nome);

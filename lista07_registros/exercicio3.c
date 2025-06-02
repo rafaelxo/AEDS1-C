@@ -9,8 +9,7 @@ typedef struct cliente {
 } Cl;
 
 int main () {
-    int N;
-    scanf ("%d", &N);
+    int N; scanf ("%d", &N);
     Cl clientes[N];
     float final;
     for (int i = 0; i < N; i++) {
