@@ -19,8 +19,8 @@ int main () {
         media += lojas[i].preco;
     }
     media /= 15;
-    printf("A media dos precos cadastrados e: %.2f\n", media);
-    printf("Lojas com precos abaixo da media:\n");
+    printf("A média dos precos cadastrados é: %.2f\n", media);
+    printf("Lojas com precos abaixo da média:\n");
     for (int i = 0; i < 15; i++) {
         if (lojas[i].preco < media) printf("Nome: %s\nTelefone: %s\n", (lojas + i)->nome, (lojas + i)->tel);
     }
