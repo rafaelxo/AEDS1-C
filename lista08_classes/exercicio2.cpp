@@ -33,13 +33,14 @@ class Relogio {
 };
 
 int main () {
-    int N; cin >> N;
+    int N;
+    cin >> N;
+    Relogio r;
     for (int i = 0; i < N; i++) {
         int hora, min, seg;
         cin >> hora >> min >> seg;
-        Relogio operacao;
-        operacao.setHorario(hora, min, seg);
-        operacao.avancaHorario();
-        operacao.exibe(hora, min, seg);
+        r.setHorario(hora, min, seg);
+        r.avancaHorario();
+        r.exibe(hora, min, seg);
     }
 }
