@@ -58,7 +58,6 @@ class Livro {
         int getAno() { return ano; }
         Autor *getAutor () { return autor; }
         void preenche () {
-            Autor::preenche;
             string frase;
             int ano;
             getline(cin, frase);
