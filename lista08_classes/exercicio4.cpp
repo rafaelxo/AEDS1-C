@@ -20,9 +20,7 @@ class Autor {
             getline(cin, frase);
             setNomeA(frase);
         }
-        void exibe () {
-            cout << "Autor: " << getNomeA() << endl;
-        }
+        void exibe () { cout << "Autor: " << getNomeA() << endl; }
 };
 
 class Livro {
@@ -79,7 +77,5 @@ int main () {
     Autor *a = new Autor();
     a->preenche();
     Livro l;
-    l.preenche();
-    l.setAutor(a);
-    l.exibe();
+    l.preenche(); l.setAutor(a); l.exibe();
 }

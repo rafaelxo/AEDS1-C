@@ -7,16 +7,8 @@ class Pessoa {
         int idade;
         float altura;
     public:
-        Pessoa() {
-            setNome("desconhecido");
-            setIdade(1);
-            setAltura(0.1);
-        }
-        Pessoa(string nNome, int nIdade, float nAltura) {
-            setNome(nNome);
-            setIdade(nIdade);
-            setAltura(nAltura);
-        }
+        Pessoa() { inicializaTudo("nenhum", 1, 1); }
+        Pessoa(string nNome, int nIdade, float nAltura) { inicializaTudo(nNome, nIdade, nAltura); }
         void preenche() {
             string nome, enter;
             int idade;
@@ -34,12 +26,33 @@ class Pessoa {
             cout << "Idade: " << getIdade() << " anos" << endl;
             cout << "Altura: " << getAltura() << " metros" << endl;
         }
-        void setNome(string texto) { nome = texto; }
-        void setIdade(int numero) { idade = numero; }
-        void setAltura(float valor) { altura = valor; }
+        void setNome(string texto) {
+            try {
+                if (texto.length() >= 3) nome = texto;
+                else throw invalid_argument ("Nome invalido!");
+            } catch (exception &e) { cerr << e.what() << endl; }
+        }
+        void setIdade(int num) {
+            try {
+                if (num > 0) idade = num;
+                else throw invalid_argument ("Idade invalida!");
+            } catch (exception &e) { cerr << e.what() << endl; }
+        }
+        void setAltura(float val) {
+            try {
+                if (val > 0) altura = val;
+                else throw invalid_argument ("Ano invalido!");
+            } catch (exception &e) { cerr << e.what() << endl; }
+        }
         string getNome() { return nome; }
         int getIdade() { return idade; }
         float getAltura() { return altura; }
+    private:
+        void inicializaTudo(string nome, int idade, float altura) {
+            setNome(nome);
+            setIdade(idade);
+            setAltura(altura);
+        }
 };
 
 void preencheGrupo(Pessoa grupo[], int N) {
