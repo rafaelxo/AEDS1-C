@@ -12,17 +12,29 @@ class Tipo {
         void setCodigo(int num) {
             try {
                 if (num == 1) {
-                    codigo = 1;
+                    codigo = num;
                     setPercentual(10);
                 } else if (num == 2) {
-                    codigo = 2;
+                    codigo = num;
                     setPercentual(20);
                 }
                 else throw invalid_argument ("Codigo invalido!");
             } catch (exception &e) { cerr << e.what() << endl; }
         }
         int getCodigo() { return codigo; }
+        string formataCod () {
+            if (codigo == 1) return "Alimentacao";
+            else if (codigo == 2) return "Limpeza";
+            else return "Desconhecido";
+        }
         float getPercentual() { return percentual; }
+        void preenche () {
+            int n;
+            cout << "Tipo do produto: ";
+            cin >> n; setCodigo(n);
+            cout << endl;
+        }
+        void exibe () { cout << "Tipo do produto: " << formataCod() << endl << "Percentual de imposto: " << getPercentual() << endl; }
     private:
         void setPercentual(float val) {
             try {
@@ -44,7 +56,7 @@ class Produto {
             setPreco(1);
             setImposto();
         }
-        Produto(string d, int n, float p, float i) {
+        Produto(string d, int n, float p) {
             setDescricao(d);
             tipo.setCodigo(n);
             setPreco(p);
@@ -52,33 +64,41 @@ class Produto {
         }
         void setDescricao(string d) {
             try {
-                if (descricao.length() > 5) descricao = d;
+                if (d.length() > 3) descricao = d;
                 else throw invalid_argument ("Descricao invalida!");
             } catch (exception &e) { cerr << e.what() << endl; }
         }
         string getDescricao() { return descricao; }
-        void setTipo(Tipo t) {
-            tipo = t;
-            setImposto();
-        }
-        Tipo getTipo() { return tipo; }
         void setPreco(float p) {
             try {
-                if (p > 0) preco = 0;
+                if (p > 0) preco = p;
                 else throw invalid_argument ("Preco invalido!");
             } catch (exception &e) { cerr << e.what() << endl; }
         }
         float getPreco() { return preco; }
         float getImposto() { return imposto; }
-        float calcular() { return preco + preco * imposto; }
-    private:
-        void setImposto() {
-            imposto = preco * tipo.getPercentual();
+        float getFinal() { return getPreco()+getImposto(); }
+        void preenche() {
+            string txt;
+            float val;
+            cout << "Descricao do produto: ";
+            getline(cin, txt); setDescricao(txt);
+            cout << "Preco do produto: ";
+            cin >> val; setPreco(val);
+            setImposto();
+            tipo.preenche();
         }
+        void exibe() {
+            cout << "Descricao: " << getDescricao() << endl << "Preco: " << getPreco() << " reais" << endl << "Imposto: " << getImposto() << " reais" << endl;
+            tipo.exibe();
+        }
+    private:
+        void setImposto() { imposto = getPreco()*tipo.getPercentual()/100; }
 };
 
 int main () {
     Produto p;
     p.preenche();
-    cout << "Preco final do produto: " << p.getFinal << endl;
+    p.exibe();
+    cout << "Preco final do produto: " << p.getFinal() << endl;
 }
