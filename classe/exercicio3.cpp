@@ -9,26 +9,14 @@ class Cargo {
         float v_hora;
     public:
         Cargo() {
-            setCodigo(1);
-            setVHora(10);
+            codigo = 1;
+            v_hora = 10;
         }
         Cargo(int i, float f) {
-            setCodigo(i);
-            setVHora(f);
-        }
-        void setCodigo(int i) {
-            try {
-                if(i > 0) codigo = i;
-                else throw invalid_argument("Codigo invalido!");
-            } catch (exception &e) { cerr << e.what() << endl; }
+            codigo = i;
+            v_hora = f;
         }
         int getCodigo() { return codigo; }
-        void setVHora(float f) {
-            try {
-                if (f > 1) v_hora = f;
-                else throw invalid_argument("Codigo invalido!");
-            } catch (exception &e) { cerr << e.what() << endl; }
-        }
         float getVHora() { return v_hora; }
 };
 
