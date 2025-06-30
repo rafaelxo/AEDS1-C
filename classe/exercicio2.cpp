@@ -12,12 +12,12 @@ class Tipo {
         void setCodigo(int num) {
             try {
                 if (num == 1) {
-                    codigo = num;
-                    setPercentual(10);
+                    codigo = 1;
+                    percentual = 10;
                 }
                 else if (num == 2) {
-                    codigo = num;
-                    setPercentual(20);
+                    codigo = 2;
+                    percentual = 20;
                 }
                 else throw invalid_argument("Codigo invalido!");
             } catch (exception &e) { cerr << e.what() << endl; }
@@ -36,13 +36,6 @@ class Tipo {
             cout << endl;
         }
         void exibe() { cout << "Tipo do produto: " << formataCod() << endl << "Percentual de imposto: " << getPercentual() << endl; }
-    private:
-        void setPercentual(float val) {
-            try {
-                if (val >= 0) percentual = val;
-                else throw invalid_argument("Codigo invalido!");
-            } catch (exception &e) { cerr << e.what() << endl; }
-        }
 };
 
 class Produto {
