@@ -69,21 +69,19 @@ class Imovel {
             } catch (exception &e) { cerr << e.what() << endl; }
         }
         float getComissao() { return v_comissao; }
-        virtual void calcularIptu() {}
+        virtual float calcularIptu() {}
 };
 
 class Casa : public Imovel {
     private:
-        float a_construida, v_iptu;
+        float a_construida;
     public:
         Casa() : Imovel() {
             setAreaConstruida(1);
-            setIptu(1);
         }
         Casa(string prop, string quad, int lot, int sit, float ar, float venda, float comissao, float constr, float iptu)
             : Imovel(prop, quad, lot, sit, ar, venda, comissao) {
             setAreaConstruida(constr);
-            setIptu(iptu);
         }
         void setAreaConstruida(float constr) {
             try {
@@ -92,20 +90,15 @@ class Casa : public Imovel {
             } catch (exception &e) { cerr << e.what() << endl; }
         }
         float getAreaConstruida() { return a_construida; }
-        void setIptu(float iptu) {
-            try {
-                if (iptu > 0) v_iptu = iptu;
-                else throw invalid_argument("IPTU invalido!");
-            } catch (exception &e) { cerr << e.what() << endl; }
-        }
+        float calcularIptu() { return getVenda() * 0.01; }
 };
 
 class Terreno : public Imovel {
-    private:
-
     public:
-        Terreno() {}
-
+        Terreno() : Imovel() {}
+        Terreno(string prop, string quad, int lot, int sit, float ar, float venda, float comissao)
+            : Imovel(prop, quad, lot, sit, ar, venda, comissao) {}
+        float calcularIptu() { return getVenda() * 0.02; }
 };
 
 int main() {
