@@ -3,16 +3,13 @@ import java.util.Scanner;
 class Tipo {
     private int codigo;
     private float percentual;
-
     public Tipo () { setCodigo(1); }
     public void setCodigo(int num) {
         try {
             if (num == 1) {
-                codigo = 1;
-                percentual = 10;
+                codigo = 1; percentual = 10;
             } else if (num == 2) {
-                codigo = 2;
-                percentual = 20;
+                codigo = 2; percentual = 20;
             } else throw new IllegalArgumentException("Código inválido!");
         } catch (Exception e) { System.err.println(e.getMessage()); }
     }
@@ -20,7 +17,7 @@ class Tipo {
     public string formataCod() {
         if (codigo == 1) return "Alimentação";
         else if (codigo == 2) return "Transporte";
-        ele return "Desconhecido";
+        else return "Desconhecido";
     }
     public float getPercentual() { return percentual; }
     public void preenche(Scanner sc) {
@@ -57,8 +54,7 @@ class Produto {
         try {
             if (d.length() > 0) descricao = d;
             else throw new IllegalArgumentExcpetion("Descrição inválida!");
-        } catch (Exception e) { System.err.println(e.getMessage());
-        }
+        } catch (Exception e) { System.err.println(e.getMessage()); }
     }
     public String getDescricao() { return descricao; }
     public void setPreco(float p) {
@@ -86,7 +82,6 @@ class Produto {
         System.out.println("Imposto: " + getImposto() + " reais");
         tipo.exibe();
     }
-
     private void setImposto() { imposto = getPreco() * tipo.getPercentual()/100;  }
 }
 
@@ -96,6 +91,5 @@ public class Main {
         Produto p = new Produto();
         p.preenche(sc); p.exibe();
         System.out.println("Preço final do produto: " + p.getFinal() + " reais");
-        sc.close();
     }
 }

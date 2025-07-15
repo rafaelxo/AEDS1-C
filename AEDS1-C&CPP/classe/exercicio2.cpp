@@ -96,14 +96,14 @@ int main() {
     for (int i = 0; i < 5; i++) p[i].preenche();
     for (int i = 0; i < 5; i++) p[i].exibe();
     for (int i = 0; i < 5; i++) {
-        cout << "Preco final do produto " << (i + 1) << ":" << p[i].getFinal() << endl;
+        cout << "Preco final do produto " << (i + 1) << ":" << p[i].getFinal() << " reais" << endl;
         media += p[i].getFinal();
     }
     media /= 5;
-    cout << "Media de preco do produtos: " << media << endl << endl;
+    cout << "Média de preco dos produtos: " << media << endl << endl;
     for (int i = 0; i < 5; i++) {
-        if (p[i].getFinal() > media) cout << "Produto " << (i + 1) << " tem preco acima da media!" << endl;
-        else if (p[i].getFinal() < media) cout << "Produto " << (i + 1) << " tem preco abaixo da media!" << endl;
-        else cout << "Produto " << (i + 1) << " tem preco igual a media!" << endl;
+        if (p[i].getFinal() > media) cout << "Produto " << (i + 1) << " tem preço acima da média!" << endl;
+        else if (p[i].getFinal() < media) cout << "Produto " << (i + 1) << " tem preço abaixo da média!" << endl;
+        else cout << "Produto " << (i + 1) << " tem preço igual à média!" << endl;
     }
 }
