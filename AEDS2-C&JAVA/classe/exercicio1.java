@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Tipo {
     private int codigo;
-    private float percentual;
+    private double percentual;
     public Tipo () { setCodigo(1); }
     public void setCodigo(int num) {
         try {
@@ -19,7 +19,7 @@ class Tipo {
         else if (codigo == 2) return "Transporte";
         else return "Desconhecido";
     }
-    public float getPercentual() { return percentual; }
+    public double getPercentual() { return percentual; }
     public void preenche(Scanner sc) {
         int n;
         Systema.out.print("Tipo do produto: ");
@@ -36,7 +36,7 @@ class Tipo {
 class Produto {
     private String descricao;
     private Tipo tipo = new Tipo();
-    private float preco, imposto;
+    private double preco, imposto;
 
     public Produto() {
         setDescricao("nenhum");
@@ -44,7 +44,7 @@ class Produto {
         setPreco(1);
         setImposto();
     }
-    public Produto(String d, int n, float p) {
+    public Produto(String d, int n, double p) {
         setDescricao(d);
         tipo.setCodigo(n);
         setPreco(p);
@@ -57,22 +57,22 @@ class Produto {
         } catch (Exception e) { System.err.println(e.getMessage()); }
     }
     public String getDescricao() { return descricao; }
-    public void setPreco(float p) {
+    public void setPreco(double p) {
         try {
             if(p > 0) preco = p;
             else throw new IllegalArgumentException("Preço inválido!");
         } catch (Exception e) { System.err.println(e.getMessage()); }
     }
-    public float getPreco() { return preco; }
-    public float getImposto() { return imposto; }
-    public float getFinal() { return getPreco() + getImposto(); }
+    public double getPreco() { return preco; }
+    public double getImposto() { return imposto; }
+    public double getFinal() { return getPreco() + getImposto(); }
     public void preenche(Scanner sc) {
         String txt;
-        float val;
+        double val;
         System.out.print("Descrição do produto: ");
         txt = sc.nextLine(); setDescricao(txt);
         System.out.print("Preço do produto: ");
-        val = sc.nextFloat(); setPreco(val);
+        val = sc.nextdouble(); setPreco(val);
         setImposto();
         tipo.preenche(sc);
     }
