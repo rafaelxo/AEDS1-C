@@ -17,8 +17,7 @@ class Tipo {
                 } else if (num == 2) {
                     codigo = 2;
                     percentual = 20;
-                }
-                else throw invalid_argument ("Codigo invalido!");
+                } else throw invalid_argument ("Codigo invalido!");
             } catch (exception &e) { cerr << e.what() << endl; }
         }
         int getCodigo() { return codigo; }
