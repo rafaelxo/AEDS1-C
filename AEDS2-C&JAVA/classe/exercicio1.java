@@ -47,17 +47,55 @@ class Produto {
         setPreco(1);
         setImposto();
     }
-    public Produto(String s, int i, float f) {
-        setDescricao(s);
-        tipo.setCodigo(i);
-        setPreco(f);
+    public Produto(String d, int n, float p) {
+        setDescricao(d);
+        tipo.setCodigo(n);
+        setPreco(p);
         setImposto();
     }
-    public void setDescricao(String s) {
+    public void setDescricao(String d) {
         try {
-            if (s.length() > 0) descricao = s;
+            if (d.length() > 0) descricao = d;
             else throw new IllegalArgumentExcpetion("Descrição inválida!");
         } catch (Exception e) { System.err.println(e.getMessage());
         }
+    }
+    public String getDescricao() { return descricao; }
+    public void setPreco(float p) {
+        try {
+            if(p > 0) preco = p;
+            else throw new IllegalArgumentException("Preço inválido!");
+        } catch (Exception e) { System.err.println(e.getMessage()); }
+    }
+    public float getPreco() { return preco; }
+    public float getImposto() { return imposto; }
+    public float getFinal() { return getPreco() + getImposto(); }
+    public void preenche(Scanner sc) {
+        String txt;
+        float val;
+        System.out.print("Descrição do produto: ");
+        txt = sc.nextLine(); setDescricao(txt);
+        System.out.print("Preço do produto: ");
+        val = sc.nextFloat(); setPreco(val);
+        setImposto();
+        tipo.preenche(sc);
+    }
+    public void exibe() {
+        System.out.println("Descrição: " + getDescricao());
+        System.out.println("Preço: " + getPreco() + " reais");
+        System.out.println("Imposto: " + getImposto() + " reais");
+        tipo.exibe();
+    }
+
+    private void setImposto() { imposto = getPreco() * tipo.getPercentual()/100;  }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Produto p = new Produto();
+        p.preenche(sc); p.exibe();
+        System.out.println("Preço final do produto: " + p.getFinal() + " reais");
+        sc.close();
     }
 }

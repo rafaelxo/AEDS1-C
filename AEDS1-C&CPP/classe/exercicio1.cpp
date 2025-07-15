@@ -90,7 +90,6 @@ class Produto {
 
 int main () {
     Produto p;
-    p.preenche();
-    p.exibe();
-    cout << "Preco final do produto: " << p.getFinal() << endl;
+    p.preenche(); p.exibe();
+    cout << "Preco final do produto: " << p.getFinal() << " reais" << endl;
 }
