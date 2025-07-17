@@ -44,7 +44,7 @@ public abstract class Produto {
         } catch (Exception e) { System.out.println(e.getMessage()); }
     }
     public String getValidade() { return validade; }
-    public double abstract gerarPrecoVenda();
+    public abstract double gerarPrecoVenda();
     public void exibe() {
         System.out.println("Código: " + getCodigo());
         System.out.println("Descrição: " + getDescricao());
@@ -67,13 +67,30 @@ public class Higiene extends Produto {
 }
 
 class Sistema {
-    public void exibir(Produto[] p, int n) {
+    public static void cadastrar(Produto[] p, int n, Scanner sc) {
+        for (int i = 0; i < n; i++) {
+            System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
+            int tipo = sc.nextInt();
+            System.out.println("Insira o código do medicamento: ");
+            int cod = sc.nextInt();
+            System.out.println("Insira a descrição do medicamento: ");
+            String desc = sc.next();
+            System.out.println("Insira o preço de compra do medicamento: ");
+            double p_compra = sc.nextDouble();
+            System.out.println("Insira a data de validade do medicamento: ");
+            String data = sc.next();
+            if (tipo == 1) p[i] = new Medicamento(cod, desc, p_compra, data);
+            else if (tipo == 2) p[i] = new Higiene(cod, desc, p_compra, data);
+            else System.out.println("Tipo inválido!");
+        }
+    }
+    public static void exibir(Produto[] p, int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Produto " + (i + 1) + ":");
             p[i].exibe();
         }
     }
-    public void caro(Produto[] p, int n) {
+    public static void caro(Produto[] p, int n) {
         double mais = p[0].gerarPrecoVenda();
         int ind = 0;
         for (int i = 1; i < n; i++) {
@@ -84,9 +101,8 @@ class Sistema {
         }
         System.out.println("Produto mais caro:");
         p[ind].exibe();
-        System.out.println("Preço de venda: " + p[ind].gerarPrecoVenda());
     }
-    public void alterar(Produto[] p, int n, Scanner sc) {
+    public static void alterar(Produto[] p, int n, Scanner sc) {
         System.out.println("Insira o código do produto que deseja alterar: ");
         int alt = sc.nextInt();
         for (int i = 0; i < n; i++) {
@@ -111,25 +127,8 @@ class Sistema {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        public void cadastrar(Scanner sc) {
-            int n = sc.nextInt();
-            Produto prod[] = new Produto[n];
-            for (int i = 0; i < n; i++) {
-                System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
-                int tipo = sc.nextInt();
-                System.out.println("Insira o código do medicamento: ");
-                int cod = sc.nextInt();
-                System.out.println("Insira a descrição do medicamento: ");
-                String desc = sc.next();
-                System.out.println("Insira o preço de compra do medicamento: ");
-                double p_compra = sc.nextDouble();
-                System.out.println("Insira a data de validade do medicamento: ");
-                String data = sc.next();
-                if (tipo == 1) prod[i] = new Medicamento(cod, desc, p_compra, data);
-                else if (tipo == 2) prod[i] = new Higiene(cod, desc, p_compra, data);
-                else System.out.println("Tipo inválido!");
-            }
-        }
+        int n = sc.nextInt();
+        Produto prod[] = new Produto[n];
         do {
             System.out.println("Insira a opção desejada: ");
             System.out.println("1 - Cadastrar produtos");
@@ -140,16 +139,16 @@ public class Main {
             int op = sc.nextInt();
             switch (op) {
                 case 1:
-                    cadastrar(sc);
+                    Sistema.cadastrar(prod, n, sc);
                     break;
                 case 2:
                     Sistema.exibir(prod, n);
                     break;
                 case 3:
-                    Sistema.caro(produto, n);
+                    Sistema.caro(prod, n);
                     break;
                 case 4:
-                    Sistema.alterar(produto, n);
+                    Sistema.alterar(prod, n, sc);
                     break;
                 case 5:
                     System.out.println("Finalizando...");
