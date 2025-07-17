@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Produto {
+public abstract class Produto {
     private int codigo;
     private String descricao, validade;
     private double p_compra;
@@ -44,7 +44,7 @@ public class Produto {
         } catch (Exception e) { System.out.println(e.getMessage()); }
     }
     public String getValidade() { return validade; }
-    public double gerarPrecoVenda();
+    public double abstract gerarPrecoVenda();
     public void exibe() {
         System.out.println("Código: " + getCodigo());
         System.out.println("Descrição: " + getDescricao());
@@ -82,16 +82,18 @@ class Sistema {
                 ind = i;
             }
         }
-        System.out.println("O produto mais caro é o " + (ind + 1) + ", custando: " + p[ind].gerarPrecoVenda());
+        System.out.println("Produto mais caro:");
+        p[ind].exibe();
+        System.out.println("Preço de venda: " + p[ind].gerarPrecoVenda());
     }
-    public void alterar(Produto[] p, int n) {
+    public void alterar(Produto[] p, int n, Scanner sc) {
         System.out.println("Insira o código do produto que deseja alterar: ");
         int alt = sc.nextInt();
         for (int i = 0; i < n; i++) {
             if (p[i].getCodigo() == alt) {
                 System.out.println("Insira o novo código: ");
                 int cod = sc.nextInt();
-                [i].setCodigo(cod);
+                p[i].setCodigo(cod);
                 System.out.println("Insira a nova descrição: ");
                 String desc = sc.next();
                 p[i].setDescricao(desc);
