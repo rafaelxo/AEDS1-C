@@ -56,7 +56,7 @@ public class Produto {
 }
 
 public class Medicamento extends Produto {
-    public double gerarPrecoVenda() { return getPCompra() + getPCompra() * 0.2; }
+    public double gerarPrecoVenda() { return getPCompra() + getPCompra() * 0.4; }
 }
 
 public class Higiene extends Produto {
@@ -67,29 +67,30 @@ public void cadastrar(sc) {
     int n = sc.nextInt();
     Produto produto[] = new Produto[n];
     for (int i = 0; i < n; i++) {
-    System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
-    int tipo = sc.nextInt();
-    if (tipo == 1) {
-        System.out.println("Insira o código do medicamento: ");
-        int cod = sc.nextInt();
-        System.out.println("Insira a descrição do medicamento: ");
-        String desc = sc.next();
-        System.out.println("Insira o preço de compra do medicamento: ");
-        double p_compra = sc.nextDouble();
-        System.out.println("Insira a data de validade do medicamento: ");
-        String data = sc.next();
-        produto[i] = new Medicamento(cod, desc, p_compra, data);
-    } else if (tipo == 2) {
-        System.out.println("Insira o código do produto: ");
-        int cod = sc.nextInt();
-        System.out.println("Insira a descrição do produto: ");
-        String desc = sc.next();
-        System.out.println("Insira o preço de compra do produto: ");
-        double p_compra = sc.nextDouble();
-        System.out.println("Insira a data de validade do produto: ");
-        String data = sc.next();
-        produto[i] = new Higiene(cod, desc, p_compra, data);
-    } else System.out.println("Tipo inválido!");
+        System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
+        int tipo = sc.nextInt();
+        if (tipo == 1) {
+            System.out.println("Insira o código do medicamento: ");
+            int cod = sc.nextInt();
+            System.out.println("Insira a descrição do medicamento: ");
+            String desc = sc.next();
+            System.out.println("Insira o preço de compra do medicamento: ");
+            double p_compra = sc.nextDouble();
+            System.out.println("Insira a data de validade do medicamento: ");
+            String data = sc.next();
+            produto[i] = new Medicamento(cod, desc, p_compra, data);
+        } else if (tipo == 2) {
+            System.out.println("Insira o código do produto: ");
+            int cod = sc.nextInt();
+            System.out.println("Insira a descrição do produto: ");
+            String desc = sc.next();
+            System.out.println("Insira o preço de compra do produto: ");
+            double p_compra = sc.nextDouble();
+            System.out.println("Insira a data de validade do produto: ");
+            String data = sc.next();
+            produto[i] = new Higiene(cod, desc, p_compra, data);
+        } else System.out.println("Tipo inválido!");
+    }
 }
 
 public void exibir(Produto[] p) {
@@ -124,7 +125,7 @@ public void alterar(Produto[] p) {
             String data = sc.next();
             p[i].setValidade(data);
             }
-        }
+        } else System.out.println("Produto inexistente!");
     }
 }
 
