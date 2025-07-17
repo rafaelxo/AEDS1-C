@@ -40,7 +40,7 @@ public class Produto {
     public double getPCompra() { return p_compra; }
     public void setValidade(String v) {
         try {
-            if (v.lenght() == 10) validade = v;
+            if (v.length() == 10) validade = v;
             else throw new IllegalArgumentException("Validade inválida!");
         } catch (Exception e) { System.out.println(e.getMessage()); }
     }
@@ -101,10 +101,14 @@ public void exibir(Produto[] p) {
 
 public void caro(Produto[] p) {
     double mais = p[0].gerarPrecoVenda();
+    int ind = 0;
     for (int i = 1; i < n; i++) {
-        if (p[i].gerarPrecoVenda() > mais) mais = p[i].gerarPrecoVenda();
+        if (p[i].gerarPrecoVenda() > mais) {
+            mais = p[i].gerarPrecoVenda();
+            ind = i;
+        }
     }
-    System.out.println("O produto mais caro é o " + (i + 1) + ", custando: " + mais);
+    System.out.println("O produto mais caro é o " + (ind + 1) + ", custando: " + p[ind].gerarPrecoVenda());
 }
 
 public void alterar(Produto[] p) {
