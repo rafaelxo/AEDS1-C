@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Cargo {
+public class Cargo {
     private int codigo;
     private double v_hora;
     public Cargo() {
@@ -13,7 +13,7 @@ class Cargo {
     public double getVHora() { return v_hora; }
 }
 
-class Funcionario {
+public class Funcionario {
     private String nome;
     private int cargo, horas_t;
     private char sexo;

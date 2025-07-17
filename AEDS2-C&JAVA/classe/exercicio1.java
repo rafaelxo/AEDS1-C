@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Tipo {
+public class Tipo {
     private int codigo;
     private double percentual;
     public Tipo () { setCodigo(1); }
@@ -33,7 +33,7 @@ class Tipo {
     }
 }
 
-class Produto {
+public class Produto {
     private String descricao;
     private Tipo tipo = new Tipo();
     private double preco, imposto;

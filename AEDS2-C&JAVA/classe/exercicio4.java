@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class Imovel {
+public class Imovel {
     private String proprietario, quadra;
     private int lote, situacao;
     private double area, v_venda, v_comissao;
@@ -72,7 +72,7 @@ class Imovel {
     public double calcularIptu() { return 0; }
 }
 
-class Casa extends Imovel {
+public class Casa extends Imovel {
     private double a_construida;
     public Casa() {
         super();
@@ -92,14 +92,14 @@ class Casa extends Imovel {
     public double calcularIptu() { return getVenda() * 0.01; }
 }
 
-class Terreno extends Imovel {
+public class Terreno extends Imovel {
     public Terreno() super();
     public Terreno(String prop, String quad, int lot, int sit, double ar, double venda, double comissao) super(prop, quad, lot, sit, ar, venda, comissao);
     public double calcularIptu() { return getVenda() * 0.02; }
 }
 
-class Main {
-    public static int menu() {
+public class Main {
+    public static void menu() {
         int opcao;
         System.out.println("\nMenu:\n");
         System.out.println("1 - Cadastrar imovel");
