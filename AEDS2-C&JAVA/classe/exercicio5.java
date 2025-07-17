@@ -69,7 +69,7 @@ public class Higiene extends Produto {
 class Sistema {
     public void cadastrar(Scanner sc) {
         int n = sc.nextInt();
-        Produto produto[] = new Produto[n];
+        Produto prod[] = new Produto[n];
         for (int i = 0; i < n; i++) {
             System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
             int tipo = sc.nextInt();
@@ -81,8 +81,8 @@ class Sistema {
             double p_compra = sc.nextDouble();
             System.out.println("Insira a data de validade do medicamento: ");
             String data = sc.next();
-            if (tipo == 1) produto[i] = new Medicamento(cod, desc, p_compra, data);
-            else if (tipo == 2) produto[i] = new Higiene(cod, desc, p_compra, data);
+            if (tipo == 1) prod[i] = new Medicamento(cod, desc, p_compra, data);
+            else if (tipo == 2) prod[i] = new Higiene(cod, desc, p_compra, data);
             else System.out.println("Tipo inválido!");
         }
     }
