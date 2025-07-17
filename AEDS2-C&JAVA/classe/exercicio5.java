@@ -93,13 +93,13 @@ public void cadastrar(sc) {
     }
 }
 
-public void exibir(Produto[] p) {
+public void exibir(Produto[] p, int n) {
     for (int i = 0; i < n; i++) {
         System.out.println("Produto " + (i + 1) + ":");
         p[i].exibe();
     }
 
-public void caro(Produto[] p) {
+public void caro(Produto[] p, int n) {
     double mais = p[0].gerarPrecoVenda();
     int ind = 0;
     for (int i = 1; i < n; i++) {
@@ -111,7 +111,7 @@ public void caro(Produto[] p) {
     System.out.println("O produto mais caro é o " + (ind + 1) + ", custando: " + p[ind].gerarPrecoVenda());
 }
 
-public void alterar(Produto[] p) {
+public void alterar(Produto[] p, int n) {
     System.out.println("Insira o código do produto que deseja alterar: ");
     int alt = sc.nextInt();
     for (int i = 0; i < n; i++) {
@@ -149,16 +149,16 @@ public class Main {
                     cadastrar(sc);
                     break;
                 case 2:
-                    exibir(produto);
+                    exibir(produto, n);
                     break;
                 case 3:
-                    caro(produto);
+                    caro(produto, n);
                     break;
                 case 4:
-                    alterar(produto);
+                    alterar(produto, n);
                     break;
                 case 5:
-                    System.out.println("Saindo...");
+                    System.out.println("Finalizando...");
                     break;
                 default:
                     System.out.println("Opção inválida!");
