@@ -69,19 +69,26 @@ public class Higiene extends Produto {
 class Sistema {
     public static void cadastrar(Produto[] p, int n, Scanner sc) {
         for (int i = 0; i < n; i++) {
-            System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
-            int tipo = sc.nextInt();
-            System.out.println("Insira o código do medicamento: ");
-            int cod = sc.nextInt();
-            System.out.println("Insira a descrição do medicamento: ");
-            String desc = sc.next();
-            System.out.println("Insira o preço de compra do medicamento: ");
-            double p_compra = sc.nextDouble();
-            System.out.println("Insira a data de validade do medicamento: ");
-            String data = sc.next();
-            if (tipo == 1) p[i] = new Medicamento(cod, desc, p_compra, data);
-            else if (tipo == 2) p[i] = new Higiene(cod, desc, p_compra, data);
-            else System.out.println("Tipo inválido!");
+            boolean valido = false;
+            while (!valido) {
+                System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
+                int tipo = sc.nextInt();
+                System.out.println("Insira o código do medicamento: ");
+                int cod = sc.nextInt();
+                System.out.println("Insira a descrição do medicamento: ");
+                String desc = sc.next();
+                System.out.println("Insira o preço de compra do medicamento: ");
+                double p_compra = sc.nextDouble();
+                System.out.println("Insira a data de validade do medicamento: ");
+                String data = sc.next();
+                if (tipo == 1) {
+                    p[i] = new Medicamento(cod, desc, p_compra, data);
+                    valido = true;
+                } else if (tipo == 2) {
+                    p[i] = new Higiene(cod, desc, p_compra, data);
+                    valido = true;
+                } else System.out.println("Tipo inválido!");
+            }
         }
     }
     public static void exibir(Produto[] p, int n) {
@@ -105,6 +112,7 @@ class Sistema {
     public static void alterar(Produto[] p, int n, Scanner sc) {
         System.out.println("Insira o código do produto que deseja alterar: ");
         int alt = sc.nextInt();
+        boolean encontrado = false;
         for (int i = 0; i < n; i++) {
             if (p[i].getCodigo() == alt) {
                 System.out.println("Insira o novo código: ");
@@ -119,8 +127,11 @@ class Sistema {
                 System.out.println("Insira a nova data de validade: ");
                 String data = sc.next();
                 p[i].setValidade(data);
+                encontrado = true;
+                break;
             }
         }
+        if (!encontrado) System.out.println("Produto com código " + alt + " não encontrado!");
     }
 }
 
