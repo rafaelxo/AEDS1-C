@@ -60,7 +60,7 @@ public class Medicamento extends Produto {
 }
 
 public class Higiene extends Produto {
-    public gerarPrecoVenda() { return getPCommpra() + getPCompra() * 0.3; }
+    public double gerarPrecoVenda() { return getPCompra() + getPCompra() * 0.3; }
 }
 
 public void cadastrar(sc) {
