@@ -4,15 +4,18 @@ public class Produto {
     private int codigo;
     private String descricao;
     private double p_compra;
+    private String validade;
     public Produto() {
         setCodigo(0);
         setDescricao("nenuma");
         setPCompra(0);
+        setValidade("00/00/0000");
     }
-    public Produto(int c, String d, double pc) {
+    public Produto(int c, String d, double pc, String v) {
         setCodigo(c);
         setDescricao(d);
         setPCompra(pc);
+        setValidade(v);
     }
     public void setCodigo(int c) {
         try {
@@ -35,27 +38,6 @@ public class Produto {
         } catch (Exception e) { System.out.println(e.getMessage()); }
     }
     public double getPCompra() { return p_compra; }
-    public double gerarPrecoVenda();
-}
-
-public class Medicamento extends Produto {
-    private double per_lucro;
-    private String validade;
-    public Medicamento() {
-        setPerLucro(0);
-        setValidade("nenhuma");
-    }
-    public Medicamento(double pl, String v) {
-        setPerLucro(pl);
-        setValidade(v);
-    }
-    public void setPerLucro(double pl) {
-        try {
-            if (pl > 0) per_lucro = pl;
-            else throw new IllegalArgumentException("Percentual inválido!");
-        } catch (Exception e) { System.out.println(e.getMessage()); }
-    }
-    public double getPerLucro() { return per_lucro; }
     public void setValidade(String v) {
         try {
             if (v.lenght() == 10) validade = v;
@@ -63,7 +45,18 @@ public class Medicamento extends Produto {
         } catch (Exception e) { System.out.println(e.getMessage()); }
     }
     public String getValidade() { return validade; }
-    public double gerarPrecoVenda() { return getPCompra() + (getPCompra() * (getPerLucro()/100)); }
+    public double gerarPrecoVenda();
+    public void exibe() {
+        System.out.println("Código: " + getCodigo());
+        System.out.println("Descrição: " + getDescricao());
+        System.out.println("Preço de compra: " + getPCompra());
+        System.out.println("Preço de venda: " + gerarPrecoVenda());
+        System.out.println("Data de validade: " + getValidade());
+    }
+}
+
+public class Medicamento extends Produto {
+    public double gerarPrecoVenda() { return getPCompra() + getPCompra() * 0.2; }
 }
 
 public class Higiene extends Produto {
@@ -73,6 +66,35 @@ public class Higiene extends Produto {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        
+        int n; n = sc.nextInt();
+        Produto produto[] = new Produto[n];
+        for (int i = 0; i < n; i++) {
+            int tipo = sc.nextInt();
+            if (tipo == 1) {
+                System.out.println("Insira o código do medicamento: ");
+                int cod = sc.nextInt();
+                System.out.println("Insira a descrição do medicamento: ");
+                String desc = sc.next();
+                System.out.println("Insira o preço de compra do medicamento: ");
+                double p_compra = sc.nextDouble();
+                System.out.println("Insira a data de validade do medicamento: ");
+                String data = sc.next();
+                produto[i] = new Medicamento(cod, desc, p_compra, data);
+            } else if (tipo == 2) {
+                System.out.println("Insira o código do produto: ");
+                int cod = sc.nextInt();
+                System.out.println("Insira a descrição do produto: ");
+                String desc = sc.next();
+                System.out.println("Insira o preço de compra do produto: ");
+                double p_compra = sc.nextDouble();
+                System.out.println("Insira a data de validade do produto: ");
+                String data = sc.next();
+                produto[i] = new Higiene(cod, desc, p_compra, data);
+            } else System.out.println("Tipo inválido!");
+        }
+        for (int i = 0; i < n; i++) {
+            System.out.println("Produto " + (i + 1) + ":");
+            produto[i].exibe();
+        }
     }
 }
