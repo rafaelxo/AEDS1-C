@@ -66,9 +66,39 @@ public class Higiene extends Produto {
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n; n = sc.nextInt();
+        do {
+            System.out.println("Insira a opção desejada: ");
+            System.out.println("1 - Cadastrar produtos");
+            System.out.println("2 - Exibir produtos");
+            System.out.println("3 - Exibir produto mais caro");
+            System.out.println("4 - Alterar produto");
+            System.out.println("5 - Sair");
+            int op = sc.nextInt();
+            switch (op) {
+                case 1:
+                    cadastrarProdutos(sc);
+                    break;
+                case 2:
+                    exibirProdutos(produto);
+                    break;
+                case 3:
+                    caro(produto);
+                    break;
+                case 4:
+                    alterar(produto);
+                    break;
+                case 5:
+                    System.out.println("Saindo...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        } while (op != 5);
+        public void cadastrarProduto(sc) {
+            int n = sc.nextInt();
         Produto produto[] = new Produto[n];
         for (int i = 0; i < n; i++) {
+            System.out.println("Insira o tipo do produto que deseja cadastrar (1 - Medicamento | 2 - Higiene): ");
             int tipo = sc.nextInt();
             if (tipo == 1) {
                 System.out.println("Insira o código do medicamento: ");
@@ -92,9 +122,37 @@ public class Main {
                 produto[i] = new Higiene(cod, desc, p_compra, data);
             } else System.out.println("Tipo inválido!");
         }
-        for (int i = 0; i < n; i++) {
+        public void exibirProdutos(Produto[] p) {
+            for (int i = 0; i < n; i++) {
             System.out.println("Produto " + (i + 1) + ":");
-            produto[i].exibe();
+            p[i].exibe();
+        }
+        public void caro(Produto[] p) {
+            double mais = p[0].gerarPrecoVenda();
+            for (int i = 1; i < n; i++) {
+                if (p[i].gerarPrecoVenda() > mais) mais = p[i].gerarPrecoVenda();
+            }
+            System.out.println("O produto mais caro é o " + (i + 1) + ", custando: " + mais);
+        }
+        public void alterar(Produto[] p) {
+            System.out.println("Insira o código do produto que deseja alterar: ");
+            int alt = sc.nextInt();
+            for (int i = 0; i < n; i++) {
+                if (p[i].getCodigo() == alt) {
+                    System.out.println("Insira o novo código: ");
+                    int cod = sc.nextInt();
+                    p[i].setCodigo(cod);
+                    System.out.println("Insira a nova descrição: ");
+                    String desc = sc.next();
+                    p[i].setDescricao(desc);
+                    System.out.println("Insira o novo preço de compra: ");
+                    double pc = sc.nextDouble();
+                    p[i].setPCompra(pc);
+                    System.out.println("Insira a nova data de validade: ");
+                    String data = sc.next();
+                    p[i].setValidade(data);
+                }
+            }
         }
     }
 }
