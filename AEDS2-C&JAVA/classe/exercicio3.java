@@ -3,12 +3,8 @@ import java.util.Scanner;
 public class Cargo {
     private int codigo;
     private double v_hora;
-    public Cargo() {
-        codigo = 1; v_hora = 10;
-    }
-    public Cargo(int i, double f) {
-        codigo = i; v_hora = f;
-    }
+    public Cargo() { codigo = 1; v_hora = 10; }
+    public Cargo(int i, double f) { codigo = i; v_hora = f; }
     public int getCodigo() { return codigo; }
     public double getVHora() { return v_hora; }
 }
