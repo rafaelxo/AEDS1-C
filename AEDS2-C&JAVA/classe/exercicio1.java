@@ -6,11 +6,9 @@ public class Tipo {
     public Tipo () { setCodigo(1); }
     public void setCodigo(int num) {
         try {
-            if (num == 1) {
-                codigo = 1; percentual = 10;
-            } else if (num == 2) {
-                codigo = 2; percentual = 20;
-            } else throw new IllegalArgumentException("Código inválido!");
+            if (num == 1) { codigo = 1; percentual = 10; }
+            else if (num == 2) { codigo = 2; percentual = 20; }
+            else throw new IllegalArgumentException("Código inválido!");
         } catch (Exception e) { System.err.println(e.getMessage()); }
     }
     public int getCodigo() { return codigo; }
@@ -37,7 +35,6 @@ public class Produto {
     private String descricao;
     private Tipo tipo = new Tipo();
     private double preco, imposto;
-
     public Produto() {
         setDescricao("nenhum");
         tipo.setCodigo(1);
